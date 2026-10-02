@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FDE 100X™ | Enterprise AI Engineering & Production Systems | FDEAgentic100x™</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230E1A2B%22/%3E%3Ctext x=%2232%22 y=%2226%22 text-anchor=%22middle%22 font-family=%22Arial,Helvetica,sans-serif%22 font-weight=%22700%22 font-size=%2215%22 fill=%22%237C93FF%22%3EFDE%3C/text%3E%3Ctext x=%2232%22 y=%2250%22 text-anchor=%22middle%22 font-family=%22Arial,Helvetica,sans-serif%22 font-weight=%22800%22 font-size=%2222%22 fill=%22%23ffffff%22%3E100X%3C/text%3E%3C/svg%3E">
+<meta name="description" content="FDE 100X™ by FDEAgentic100x™: a 100-hour production-first Forward Deployed Engineer program covering LLM, SLM, RAG, AI Agents, MCP, LLMOps, AgentOps, AI Evaluation, AI Security, DevSecOps, AWS and GCP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1A2B; --slate:#56657A; --soft:#8A97A8; --rule:#E2E7EE; --paper:#FFFFFF; --mist:#F5F7FA;
+  --cobalt:#2340C8; --cobalt-50:#EEF1FC; --pass:#0E9467; --pass-50:#E7F6F0; --amber:#A86400; --amber-50:#FFF5E3; --red:#C2362B;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --wrap:1180px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--cobalt)}
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; line-height:1.15; margin:0; letter-spacing:-.01em}
+h2{font-size:clamp(30px,4vw,44px)}
+h3{font-size:22px}
+p{margin:0}
+.wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px}
+section{padding:96px 0; border-top:1px solid var(--rule)}
+.lede{color:var(--slate); font-size:19px; max-width:68ch; margin-top:16px}
+.sec-head{display:grid; grid-template-columns:minmax(0,1fr); gap:0; margin-bottom:48px}
+.sec-head .num{font-family:var(--serif); color:var(--cobalt); font-size:18px; margin-bottom:10px}
+:focus-visible{outline:3px solid var(--cobalt); outline-offset:3px; border-radius:4px}
+
+/* Offer ribbon */
+.ribbon{background:var(--ink); color:#fff; font-size:14.5px}
+.ribbon .wrap{display:flex; flex-wrap:wrap; gap:8px 20px; align-items:center; justify-content:center; padding-top:9px; padding-bottom:9px; text-align:center}
+.ribbon strong{color:#FFD58A}
+.cd{font-family:var(--mono); font-size:13.5px; background:rgba(255,255,255,.1); padding:2px 8px; border-radius:4px}
+
+/* Nav */
+.nav{position:sticky; top:0; z-index:40; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--rule); padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; height:68px; gap:20px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-weight:700}
+.brand .mark{width:34px; height:34px; border-radius:8px; background:var(--cobalt); color:#fff; display:grid; place-items:center; font-family:var(--serif); font-size:15px}
+.nav ul{display:flex; gap:26px; list-style:none; margin:0; padding:0}
+.nav ul a{color:var(--slate); text-decoration:none; font-size:15px; font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font:600 15.5px var(--sans); padding:12px 22px; border-radius:8px; border:1.5px solid var(--cobalt); background:var(--cobalt); color:#fff; text-decoration:none; cursor:pointer; transition:background .2s, color .2s, transform .15s}
+.btn:hover{background:#1B33A6}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent; color:var(--cobalt)}
+.btn.ghost:hover{background:var(--cobalt-50)}
+.btn.small{padding:8px 16px; font-size:14.5px}
+@media (max-width:960px){ .nav ul{display:none} }
+
+/* Hero */
+.hero{padding:40px 0 64px; border-top:0}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center}
+.hero h1{font-size:clamp(38px,4.6vw,58px); letter-spacing:-.02em; line-height:1}
+.hero .sub{font-family:var(--serif); font-size:clamp(22px,2.6vw,30px); margin-top:8px; line-height:1.25}
+.hero .motto{margin-top:18px; font-size:17px; color:var(--slate); font-weight:500}
+.hero .motto span{color:var(--ink)}
+.hero .vp{margin-top:22px; font-size:18.5px; max-width:56ch}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:24px}
+.chip{border:1px solid var(--rule); padding:5px 12px; border-radius:99px; font-size:14px; color:var(--slate); background:#fff}
+.hero .ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
+.hero .start{margin-top:16px; font-size:15px; color:var(--slate)}
+.hero .start b{color:var(--ink)}
+
+/* Pipeline panel */
+.run{border:1px solid var(--rule); border-radius:14px; background:#fff; box-shadow:0 1px 0 var(--rule), 0 24px 48px -28px rgba(14,26,43,.25); overflow:hidden}
+.run-top{display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-bottom:1px solid var(--rule); background:var(--mist); font-family:var(--mono); font-size:13px; color:var(--slate)}
+.run-top .state{display:inline-flex; align-items:center; gap:6px}
+.run-top .dot{width:8px; height:8px; border-radius:50%; background:var(--amber)}
+.run-top.done .dot{background:var(--pass)}
+.stages{list-style:none; margin:0; padding:8px 0}
+.stage{display:grid; grid-template-columns:28px 1fr auto; gap:12px; align-items:center; padding:8.5px 18px; font-size:15px; transition:background .3s}
+.stage .ico{width:20px; height:20px; border-radius:50%; border:2px solid var(--rule); position:relative}
+.stage.active{background:var(--cobalt-50)}
+.stage.active .ico{border-color:var(--cobalt); border-top-color:transparent; animation:spin .7s linear infinite}
+.stage.ok .ico{border-color:var(--pass); background:var(--pass)}
+.stage.ok .ico::after{content:""; position:absolute; left:5px; top:2px; width:5px; height:9px; border:solid #fff; border-width:0 2px 2px 0; transform:rotate(45deg)}
+.stage .nm{font-weight:600}
+.stage .ds{color:var(--slate); font-weight:400; margin-left:6px}
+.stage .t{font-family:var(--mono); font-size:12.5px; color:var(--soft)}
+.stage:not(.ok):not(.active) .nm{color:var(--soft)}
+.run-foot{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:14px 18px; border-top:1px solid var(--rule); font-size:14.5px}
+.release{font-weight:700; color:var(--soft); transition:color .3s}
+.release.live{color:var(--pass)}
+.rerun{background:none; border:0; color:var(--cobalt); font:600 14px var(--sans); cursor:pointer; padding:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:960px){ .hero-grid{grid-template-columns:1fr} }
+
+/* Proof strip */
+.proof{padding:0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+.proof .wrap{display:grid; grid-template-columns:repeat(5,1fr)}
+.proof .cell{padding:26px 18px; border-left:1px solid var(--rule)}
+.proof .cell:first-child{border-left:0}
+.proof .n{font-family:var(--serif); font-size:40px; font-weight:600; line-height:1}
+.proof .l{color:var(--slate); font-size:14.5px; margin-top:8px}
+@media (max-width:860px){ .proof .wrap{grid-template-columns:repeat(2,1fr)} .proof .cell{border-top:1px solid var(--rule)} .proof .cell:nth-child(odd){border-left:0} }
+
+/* Promise */
+.promise{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start}
+.promise blockquote{margin:0; font-family:var(--serif); font-size:clamp(24px,2.8vw,32px); line-height:1.3}
+.stack{display:flex; flex-wrap:wrap; gap:8px}
+.stack .chip{color:var(--ink); border-color:#CBD3DF}
+.stack .plus{color:var(--soft); align-self:center; font-weight:600}
+@media (max-width:860px){ .promise{grid-template-columns:1fr} }
+
+/* Compare flows */
+.flow-row{display:grid; grid-template-columns:170px 1fr; gap:20px; align-items:center; padding:22px 0; border-bottom:1px solid var(--rule)}
+.flow-row:first-child{border-top:1px solid var(--rule)}
+.flow-row .lab{font-weight:600}
+.flow-row .lab small{display:block; font-weight:400; color:var(--slate); font-size:14px}
+.flow{display:flex; flex-wrap:wrap; gap:6px 0; align-items:center}
+.flow .s{padding:6px 12px; border-radius:6px; font-size:14.5px; font-weight:500}
+.flow .j{width:22px; height:2px; background:currentColor; position:relative; margin:0 2px; opacity:.5}
+.flow .j::after{content:""; position:absolute; right:-1px; top:-3px; border:4px solid transparent; border-left:5px solid currentColor; border-right:0}
+.flow.old{color:var(--soft)} .flow.old .s{background:var(--mist); color:var(--slate)}
+.flow.new{color:var(--cobalt)} .flow.new .s{background:var(--cobalt-50); color:var(--cobalt)}
+@media (max-width:700px){ .flow-row{grid-template-columns:1fr} }
+.dims{display:grid; grid-template-columns:repeat(4,1fr); margin-top:48px; border:1px solid var(--rule); border-radius:12px; overflow:hidden}
+.dim{padding:26px 22px; border-left:1px solid var(--rule)}
+.dim:first-child{border-left:0}
+.dim svg{width:34px; height:34px; color:var(--cobalt)}
+.dim h3{margin-top:14px}
+.dim p{color:var(--slate); margin-top:6px; font-size:15.5px}
+@media (max-width:860px){ .dims{grid-template-columns:1fr 1fr} .dim:nth-child(3){border-left:0} .dim:nth-child(n+3){border-top:1px solid var(--rule)} }
+
+/* Framework steps */
+.steps{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); counter-reset:st; position:relative}
+.steps li{counter-increment:st; padding:22px 18px 22px 0; position:relative}
+.steps li::before{content:counter(st,decimal-leading-zero); font-family:var(--serif); color:var(--cobalt); font-size:15px; display:block}
+.steps li b{display:block; font-size:19px; margin-top:6px}
+.steps li span{display:block; color:var(--slate); font-size:14.5px; margin-top:4px; padding-right:8px}
+.steps li::after{content:""; position:absolute; left:0; right:14px; top:0; height:3px; background:var(--rule)}
+.steps li.lit::after{background:var(--cobalt); transition:background .4s}
+@media (max-width:860px){ .steps{grid-template-columns:1fr 1fr} }
+
+/* Pillars */
+.pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--rule)}
+.pillar{padding:28px 26px 30px 0; border-bottom:1px solid var(--rule)}
+.pillar:not(:nth-child(3n+1)){padding-left:26px; border-left:1px solid var(--rule)}
+.pillar svg{width:40px; height:40px; color:var(--cobalt)}
+.pillar h3{margin-top:12px}
+.pillar .app{margin-top:8px; color:var(--slate); font-size:15.5px}
+@media (max-width:860px){ .pillars{grid-template-columns:1fr} .pillar:not(:nth-child(3n+1)){padding-left:0; border-left:0} }
+.note{margin-top:28px; padding:18px 20px; border-left:3px solid var(--cobalt); background:var(--cobalt-50); border-radius:0 8px 8px 0; font-size:16px}
+.note.amber{border-color:var(--amber); background:var(--amber-50)}
+.note b{display:block; margin-bottom:2px}
+
+/* Hours chart */
+.hours{width:100%; border-collapse:collapse}
+.hours td{padding:12px 0; border-bottom:1px solid var(--rule); vertical-align:middle}
+.hours td.m{width:44px; font-family:var(--serif); color:var(--cobalt); font-size:16px}
+.hours td.t{padding-right:20px; font-weight:500}
+.hours td.b{width:42%}
+.hours .bar{height:10px; background:var(--mist); border-radius:5px; overflow:hidden}
+.hours .bar i{display:block; height:100%; width:0; background:var(--cobalt); border-radius:5px; transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.hours td.h{width:70px; text-align:right; font-variant-numeric:tabular-nums; font-weight:600}
+.hours tr.total td{border-bottom:0; font-weight:700; padding-top:16px}
+@media (max-width:700px){ .hours td.b{display:none} }
+
+/* Roadmap */
+.rm-controls{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px}
+.roadmap{position:relative; list-style:none; margin:0; padding:0}
+.roadmap::before{content:""; position:absolute; left:23px; top:10px; bottom:10px; width:2px; background:var(--rule)}
+.roadmap .prog{position:absolute; left:23px; top:10px; width:2px; height:0; background:var(--cobalt); transition:height .2s linear}
+.mod{position:relative; padding-left:72px; margin-bottom:14px}
+.mod .node{position:absolute; left:4px; top:18px; width:40px; height:40px; border-radius:50%; background:#fff; border:2px solid var(--rule); display:grid; place-items:center; font-family:var(--serif); font-weight:700; font-size:15px; color:var(--slate); transition:all .3s}
+.mod.open .node, .mod.seen .node{border-color:var(--cobalt); color:var(--cobalt)}
+.mod.open .node{background:var(--cobalt); color:#fff}
+.mod-card{border:1px solid var(--rule); border-radius:12px; background:#fff; transition:border-color .2s, box-shadow .2s}
+.mod.open .mod-card{border-color:#C5CEF0; box-shadow:0 18px 40px -30px rgba(35,64,200,.45)}
+.mod-head{width:100%; text-align:left; background:none; border:0; cursor:pointer; padding:20px 22px; display:grid; grid-template-columns:1fr auto; gap:14px; align-items:center; font:inherit; color:inherit}
+.mod-head h3{font-size:21px}
+.mod-head .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; font-size:14px; color:var(--slate)}
+.mod-head .meta .tag{border:1px solid var(--rule); border-radius:99px; padding:2px 10px}
+.mod-head .meta .tag.flag{border-color:#F0D29C; background:var(--amber-50); color:var(--amber)}
+.mod-head .chev{width:36px; height:36px; border-radius:50%; border:1px solid var(--rule); display:grid; place-items:center; transition:transform .3s}
+.mod.open .chev{transform:rotate(180deg); border-color:var(--cobalt); color:var(--cobalt)}
+.mod-body{display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1)}
+.mod.open .mod-body{grid-template-rows:1fr}
+.mod-body > div{overflow:hidden}
+.mod-inner{padding:4px 22px 26px; border-top:1px solid var(--rule)}
+.obj{margin-top:18px; font-size:16.5px}
+.obj b{font-weight:600}
+.secs{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 32px; margin-top:22px}
+.sec h4{font-family:var(--sans); font-size:16px; font-weight:700}
+.sec h4 .no{color:var(--cobalt); margin-right:6px}
+.sec ul{margin:8px 0 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:6px}
+.sec li{font-size:14px; background:var(--mist); border:1px solid var(--rule); border-radius:6px; padding:3px 9px}
+.sec .grp{margin-top:12px; font-size:14px; font-weight:600; color:var(--slate)}
+.sec .snote{margin-top:10px; font-size:14.5px; color:var(--slate); border-left:2px solid var(--cobalt); padding-left:10px}
+.sec.wide{grid-column:1/-1}
+.mini-flow{display:flex; flex-wrap:wrap; gap:6px 0; align-items:center; margin-top:8px; color:var(--cobalt)}
+.mini-flow .s{font-size:13.5px; background:var(--cobalt-50); color:var(--cobalt); border-radius:6px; padding:3px 9px; font-weight:500}
+.mini-flow .j{width:16px; height:2px; background:currentColor; opacity:.5; margin:0 2px}
+.cap{margin-top:26px; border:1px dashed #9FB0E6; border-radius:10px; padding:18px 20px; background:linear-gradient(180deg,#FAFBFF,#fff)}
+.cap .k{font-size:14px; color:var(--cobalt); font-weight:600}
+.cap h4{font-size:20px; margin-top:4px}
+.cap p{margin-top:8px; color:var(--slate); font-size:15.5px}
+.cap ul{columns:2; margin:10px 0 0; padding-left:18px; font-size:15px}
+.cap ul li{break-inside:avoid; margin-bottom:3px}
+.artifact{display:inline-flex; gap:8px; align-items:center; margin-top:16px; font-size:14.5px; color:var(--pass); font-weight:600}
+@media (max-width:760px){ .secs{grid-template-columns:1fr} .cap ul{columns:1} .mod{padding-left:0} .mod .node, .roadmap::before, .roadmap .prog{display:none} }
+
+.diagram{margin-top:14px; border:1px solid var(--rule); border-radius:10px; padding:16px; background:#fff; overflow-x:auto}
+.diagram svg{display:block; min-width:560px; margin:0 auto}
+
+/* Capstone */
+.tracks{display:grid; grid-template-columns:repeat(5,1fr); gap:0; border:1px solid var(--rule); border-radius:12px; overflow:hidden}
+.track{padding:22px 18px; border-left:1px solid var(--rule)}
+.track:first-child{border-left:0}
+.track svg{width:30px; height:30px; color:var(--cobalt)}
+.track .d{font-size:14px; color:var(--slate); margin-top:10px}
+.track b{display:block; margin-top:2px; font-family:var(--serif); font-size:18px; line-height:1.25; font-weight:600}
+@media (max-width:960px){ .tracks{grid-template-columns:1fr 1fr} .track{border-top:1px solid var(--rule)} .track:nth-child(odd){border-left:0} }
+.cap-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:48px; margin-top:56px; align-items:start}
+.arch{display:flex; flex-direction:column; align-items:center; gap:0}
+.arch .box{width:min(320px,100%); text-align:center; padding:11px 14px; border:1.5px solid var(--ink); border-radius:8px; font-weight:600; font-size:15px; background:#fff; opacity:.15; transition:opacity .4s, border-color .4s, background .4s}
+.arch .box.on{opacity:1}
+.arch .box.final{background:var(--pass); border-color:var(--pass); color:#fff}
+.arch .v{width:2px; height:20px; background:var(--soft)}
+.arch .tri{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; width:min(380px,100%)}
+.arch .tri .box{width:auto; border-color:var(--cobalt); color:var(--cobalt)}
+.deliv{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:1fr 1fr; gap:0 28px; counter-reset:dl}
+.deliv li{counter-increment:dl; display:grid; grid-template-columns:34px 1fr; padding:9px 0; border-bottom:1px solid var(--rule); font-size:15.5px}
+.deliv li::before{content:counter(dl,decimal-leading-zero); color:var(--cobalt); font-family:var(--serif)}
+@media (max-width:860px){ .cap-grid{grid-template-columns:1fr} .deliv{grid-template-columns:1fr} }
+
+/* Scorecard */
+.score{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
+.gate{display:flex; align-items:center; gap:10px; padding:12px 14px; border:1px solid var(--rule); border-radius:8px; font-weight:500; font-size:15.5px; transition:border-color .3s, background .3s}
+.gate .ck{width:22px; height:22px; flex:none; border-radius:50%; border:2px solid var(--rule); position:relative; transition:all .3s}
+.gate.ok{border-color:#B9E2D2; background:var(--pass-50)}
+.gate.ok .ck{background:var(--pass); border-color:var(--pass)}
+.gate.ok .ck::after{content:""; position:absolute; left:6px; top:2px; width:5px; height:10px; border:solid #fff; border-width:0 2px 2px 0; transform:rotate(45deg)}
+@media (max-width:860px){ .score{grid-template-columns:1fr 1fr} }
+
+/* Artifact table */
+.tbl{width:100%; border-collapse:collapse; font-size:16px}
+.tbl th{text-align:left; font-weight:600; color:var(--slate); font-size:14px; padding:10px 12px; border-bottom:2px solid var(--ink)}
+.tbl td{padding:12px; border-bottom:1px solid var(--rule)}
+.tbl td:first-child{font-family:var(--serif); color:var(--cobalt); width:70px}
+.tbl-wrap{overflow-x:auto}
+
+/* Keywords */
+.kw{display:grid; grid-template-columns:repeat(3,1fr); gap:28px 36px}
+.kw h4{font-family:var(--sans); font-size:16px; font-weight:700; padding-bottom:8px; border-bottom:1px solid var(--rule)}
+.kw ul{list-style:none; padding:0; margin:10px 0 0; display:flex; flex-wrap:wrap; gap:6px}
+.kw li{font-size:14px; padding:3px 10px; border-radius:99px; background:var(--mist); color:var(--ink)}
+@media (max-width:860px){ .kw{grid-template-columns:1fr} }
+
+/* Batches */
+.batches{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.batch{all:unset; box-sizing:border-box; cursor:pointer; display:block; border:1.5px solid var(--rule); border-radius:14px; padding:26px; background:#fff; transition:border-color .2s, box-shadow .2s, transform .2s}
+.batch:hover{border-color:#AEBBEA}
+.batch:focus-visible{outline:3px solid var(--cobalt); outline-offset:3px}
+.batch[aria-pressed="true"]{border-color:var(--cobalt); box-shadow:0 0 0 3px var(--cobalt-50), 0 24px 40px -30px rgba(35,64,200,.5)}
+.batch .top{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
+.batch .bn{font-size:14.5px; color:var(--cobalt); font-weight:600}
+.batch h3{font-size:30px; margin-top:4px}
+.batch .sel{font-size:13.5px; font-weight:600; border-radius:99px; padding:4px 12px; border:1px solid var(--rule); color:var(--slate); white-space:nowrap}
+.batch[aria-pressed="true"] .sel{background:var(--cobalt); border-color:var(--cobalt); color:#fff}
+.batch dl{display:grid; grid-template-columns:auto 1fr; gap:6px 18px; margin:18px 0 0; font-size:15.5px}
+.batch dt{color:var(--slate)} .batch dd{margin:0; font-weight:600}
+.seats{margin-top:20px}
+.seats .row{display:flex; justify-content:space-between; font-size:14.5px}
+.seats .row b{color:var(--red)}
+.seats .track2{height:8px; background:var(--mist); border-radius:4px; margin-top:6px; overflow:hidden}
+.seats .track2 i{display:block; height:100%; background:linear-gradient(90deg,var(--cobalt),#5B74E6); width:0; transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.batch .hint{margin-top:16px; font-size:14.5px; color:var(--cobalt); font-weight:600}
+@media (max-width:760px){ .batches{grid-template-columns:1fr} }
+
+.plan{margin-top:28px; border:1px solid var(--rule); border-radius:14px; overflow:hidden}
+.plan-head{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center; padding:18px 22px; background:var(--mist); border-bottom:1px solid var(--rule)}
+.plan-head h3{font-size:22px}
+.plan-head p{font-size:14.5px; color:var(--slate); margin-top:2px}
+.tabs{display:inline-flex; border:1px solid var(--rule); border-radius:8px; background:#fff; padding:3px}
+.tabs button{border:0; background:none; font:600 14.5px var(--sans); padding:8px 14px; border-radius:6px; cursor:pointer; color:var(--slate)}
+.tabs button[aria-selected="true"]{background:var(--ink); color:#fff}
+.plan-body{padding:8px 22px 22px; animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+.gantt{width:100%; border-collapse:collapse}
+.gantt td{padding:11px 8px 11px 0; border-bottom:1px solid var(--rule); vertical-align:middle; font-size:15px}
+.gantt td.c{font-family:var(--serif); color:var(--cobalt); width:44px}
+.gantt td.tt{font-weight:500; width:34%}
+.gantt td.dr{white-space:nowrap; color:var(--slate); width:190px; font-variant-numeric:tabular-nums}
+.gantt .lane{position:relative; height:12px; background:var(--mist); border-radius:6px}
+.gantt .lane i{position:absolute; top:0; bottom:0; background:var(--cobalt); border-radius:6px; opacity:.85; transform-origin:left; animation:grow .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)} to{transform:scaleX(1)}}
+@media (max-width:760px){ .gantt td.ln{display:none} .gantt td.tt{width:auto} .gantt td.dr{width:auto; white-space:normal} }
+.days{list-style:none; margin:10px 0 0; padding:0}
+.day{display:grid; grid-template-columns:92px 150px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--rule)}
+.day .dn{font-family:var(--serif); font-weight:600; font-size:18px}
+.day .dn small{display:block; font-family:var(--sans); font-weight:400; font-size:13px; color:var(--slate)}
+.day .dt{font-size:15px; font-weight:600}
+.day .dt small{display:block; font-weight:400; color:var(--slate); font-size:13.5px}
+.day .mods{display:flex; flex-wrap:wrap; gap:6px}
+.day .mods span{font-size:13px; font-weight:600; background:var(--cobalt-50); color:var(--cobalt); border-radius:5px; padding:2px 8px}
+.day ul{margin:6px 0 0; padding-left:18px; font-size:14.5px; color:var(--ink)}
+.day ul li{margin:1px 0}
+.day ul .cont{color:var(--slate)}
+@media (max-width:760px){ .day{grid-template-columns:1fr 1fr} .day .ag{grid-column:1/-1} }
+.plan-foot{display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; padding-top:18px; font-size:14px; color:var(--slate)}
+
+/* Fees */
+.fees{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.fee{border:1px solid var(--rule); border-radius:14px; padding:28px 26px; background:#fff; position:relative}
+.fee.feat{border:2px solid var(--amber); background:linear-gradient(180deg,#FFFBF3,#fff)}
+.fee .pill{position:absolute; top:-13px; left:24px; background:var(--amber); color:#fff; font-size:13px; font-weight:700; padding:4px 12px; border-radius:99px}
+.fee h3{font-size:21px}
+.fee .price{font-family:var(--serif); font-size:46px; font-weight:700; margin-top:14px; line-height:1}
+.fee .was{color:var(--soft); text-decoration:line-through; font-size:17px; margin-top:8px; display:block}
+.fee .save{display:inline-block; margin-top:10px; background:var(--pass-50); color:var(--pass); font-weight:700; font-size:14px; padding:3px 10px; border-radius:6px}
+.fee p{color:var(--slate); font-size:15px; margin-top:14px}
+.fee .cd2{margin-top:14px; font-family:var(--mono); font-size:14px; color:var(--amber); font-weight:500}
+.fee.closed{opacity:.55}
+@media (max-width:960px){ .fees{grid-template-columns:1fr} }
+.guar{display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:center; margin-top:28px; border:1px solid var(--rule); border-radius:14px; padding:26px}
+.guar svg{width:64px; height:64px; color:var(--pass)}
+.guar h3{font-size:24px}
+.guar p{color:var(--slate); margin-top:6px}
+@media (max-width:600px){ .guar{grid-template-columns:1fr} }
+
+/* Enroll */
+.enroll{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start}
+.form-fields{list-style:none; padding:0; margin:18px 0 0; counter-reset:ff}
+.form-fields li{counter-increment:ff; display:grid; grid-template-columns:34px 1fr; padding:11px 0; border-bottom:1px solid var(--rule)}
+.form-fields li::before{content:counter(ff); width:24px; height:24px; border-radius:50%; background:var(--cobalt-50); color:var(--cobalt); font-weight:700; font-size:13px; display:grid; place-items:center}
+.enroll-box{border:1.5px solid var(--ink); border-radius:14px; padding:28px}
+.enroll-box .opt{display:flex; justify-content:space-between; align-items:center; gap:14px; padding:16px 0; border-bottom:1px solid var(--rule)}
+.enroll-box .opt:last-of-type{border-bottom:0}
+.enroll-box .opt b{display:block}
+.enroll-box .opt span{font-size:14.5px; color:var(--slate)}
+@media (max-width:860px){ .enroll{grid-template-columns:1fr} }
+
+.position{background:var(--ink); color:#fff; border-top:0}
+.position h2{font-size:clamp(28px,3.6vw,40px); max-width:24ch}
+.position p{color:#C9D2E0; margin-top:18px; font-size:18px; max-width:70ch}
+.position .fin{color:#fff; font-weight:600; margin-top:22px}
+footer{padding:36px 0 48px; font-size:14px; color:var(--slate)}
+footer .wrap{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between}
+
+/* Top guarantee band */
+.gband{padding:28px 0 0}
+.gband-in{display:grid; grid-template-columns:auto 1fr auto; gap:18px; align-items:center; border:1.5px solid #B9E2D2; background:var(--pass-50); border-radius:12px; padding:16px 20px}
+.gband svg{width:40px; height:40px; color:var(--pass)}
+.gband b{display:block; font-family:var(--serif); font-size:20px; line-height:1.25}
+.gband p{color:var(--slate); font-size:15px; margin-top:2px}
+.gband .fine{font-size:13px; color:var(--pass); font-weight:600; white-space:nowrap}
+@media (max-width:700px){ .gband-in{grid-template-columns:auto 1fr} .gband .fine{display:none} }
+
+/* Book */
+.book{display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:center}
+.cover{width:200px; aspect-ratio:3/4.3; border-radius:4px 10px 10px 4px; background:linear-gradient(135deg,#13233A 0%,#1E3563 100%); color:#fff; padding:22px 18px; position:relative; box-shadow:inset 8px 0 0 rgba(255,255,255,.08), 14px 18px 30px -12px rgba(14,26,43,.45); transform:rotate(-3deg); transition:transform .4s}
+.cover:hover{transform:rotate(0) translateY(-4px)}
+.cover .k{font-size:11.5px; color:#FFD58A; font-weight:600}
+.cover .ti{font-family:var(--serif); font-size:19px; line-height:1.2; margin-top:10px; font-weight:600}
+.cover .au{position:absolute; left:18px; bottom:18px; font-size:12px; color:#C9D2E0}
+.cover .ln{position:absolute; left:18px; right:18px; bottom:46px; height:2px; background:#FFD58A; opacity:.7}
+.free{display:inline-block; background:var(--amber-50); color:var(--amber); border:1px solid #F0D29C; font-weight:700; font-size:14px; padding:3px 12px; border-radius:99px}
+.book h3{font-size:28px; margin-top:12px}
+.book .by{color:var(--slate); margin-top:6px; font-size:15.5px}
+.book ul{margin:16px 0 0; padding-left:20px; font-size:15.5px}
+.book ul li{margin:4px 0}
+@media (max-width:760px){ .book{grid-template-columns:1fr} }
+
+/* Sandbox */
+.sbx{display:grid; grid-template-columns:.9fr 1.1fr; gap:48px; align-items:start}
+.sbx-feats{list-style:none; padding:0; margin:0}
+.sbx-feats li{display:grid; grid-template-columns:30px 1fr; gap:8px; padding:14px 0; border-bottom:1px solid var(--rule)}
+.sbx-feats li svg{width:22px; height:22px; color:var(--cobalt); margin-top:2px}
+.sbx-feats b{display:block}
+.sbx-feats span{color:var(--slate); font-size:15px}
+.ide{border-radius:12px; overflow:hidden; border:1px solid #1E2B40; background:#0F1A2A; color:#DCE3EE; box-shadow:0 30px 60px -36px rgba(14,26,43,.6)}
+.ide-tabs{display:flex; overflow-x:auto; background:#0B1422; border-bottom:1px solid #1E2B40}
+.ide-tabs button{flex:none; border:0; background:none; color:#8FA0B8; font:500 13px var(--mono); padding:11px 14px; cursor:pointer; border-bottom:2px solid transparent}
+.ide-tabs button[aria-selected="true"]{color:#fff; border-bottom-color:#7C93FF; background:#0F1A2A}
+.ide pre{margin:0; padding:18px 20px; font:13.5px/1.65 var(--mono); overflow-x:auto; min-height:300px}
+.ide .c{color:#6F819B} .ide .k2{color:#A5B4FF} .ide .s{color:#9ADBB9} .ide .f{color:#FFD58A}
+.ide-foot{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 16px; border-top:1px solid #1E2B40; font:12.5px var(--mono); color:#8FA0B8}
+.ide-foot button{background:#2340C8; color:#fff; border:0; border-radius:6px; font:600 13px var(--sans); padding:6px 14px; cursor:pointer}
+.ide-out{padding:0 20px; font:13px/1.6 var(--mono); color:#9ADBB9; max-height:0; overflow:hidden; transition:max-height .4s, padding .4s; border-top:1px solid transparent}
+.ide-out.show{max-height:160px; padding:12px 20px; border-top-color:#1E2B40}
+.tpl{margin-top:48px}
+.tpl-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:18px}
+.tpl-item{border:1px solid var(--rule); border-radius:8px; padding:12px 14px; font-size:14.5px}
+.tpl-item small{display:block; color:var(--cobalt); font-weight:600; font-size:12.5px}
+.tpl-item code{font-family:var(--mono); font-size:12.5px; color:var(--slate); display:block; margin-top:4px; word-break:break-all}
+@media (max-width:960px){ .sbx{grid-template-columns:1fr} .tpl-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .tpl-grid{grid-template-columns:1fr} }
+
+/* Promo banner */
+.pbanner{position:relative; border-radius:16px; padding:2px; background:linear-gradient(110deg,#2340C8,#7A4DDB,#0E9467,#D98A3D,#2340C8); background-size:300% 100%; animation:hue 12s linear infinite; margin-bottom:44px}
+@keyframes hue{to{background-position:300% 0}}
+.pbanner .in{position:relative; border-radius:14px; background:#fff; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; padding:20px 26px; overflow:hidden}
+.pbanner .in::before{content:""; position:absolute; inset:0; background:radial-gradient(600px 120px at var(--gx,20%) 0%, rgba(35,64,200,.07), transparent 70%); transition:--gx 1s}
+.pmsg{position:relative; min-height:78px}
+.pmsg .m{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; opacity:0; transform:translateY(10px); transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)}
+.pmsg .m.on{opacity:1; transform:none}
+.pmsg .m b{font-size:13px; font-weight:700; letter-spacing:.02em}
+.pmsg .m span{font-family:var(--serif); font-size:clamp(17px,1.9vw,22px); line-height:1.3; margin-top:4px; color:var(--ink)}
+.pmsg .m em{font-style:normal; font-weight:700}
+.punch{text-align:right; white-space:nowrap}
+.punch strong{display:block; font-family:var(--serif); font-size:clamp(18px,2vw,24px); font-weight:700; background:linear-gradient(90deg,#2340C8,#7A4DDB,#0E9467,#D98A3D,#2340C8); background-size:300% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:hue 8s linear infinite}
+.pdots{display:flex; gap:6px; justify-content:flex-end; margin-top:10px}
+.pdots button{width:22px; height:5px; border-radius:3px; border:0; background:var(--rule); cursor:pointer; padding:0; transition:background .3s, width .3s}
+.pdots button[aria-current="true"]{background:var(--ink); width:34px}
+@media (max-width:860px){ .pbanner .in{grid-template-columns:1fr} .punch{text-align:left; white-space:normal} .pdots{justify-content:flex-start} .pmsg{min-height:110px} }
+
+/* Mentors */
+.mentors{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:900px}
+.mentor h3 a{color:inherit; text-decoration:none; border-bottom:1px dashed #AEBBEA}
+.mentor h3 a:hover{color:var(--cobalt)}
+.mentor{border:1px solid var(--rule); border-radius:14px; padding:26px 22px; background:#fff; transition:transform .25s, box-shadow .25s}
+.mentor:hover{transform:translateY(-3px); box-shadow:0 22px 40px -30px rgba(14,26,43,.45)}
+.av{width:72px; height:72px; border-radius:50%; padding:3px; background:conic-gradient(from 0deg,#2340C8,#7A4DDB,#0E9467,#D98A3D,#2340C8); animation:spin 10s linear infinite}
+.av span{display:grid; place-items:center; width:100%; height:100%; border-radius:50%; background:#fff; font-family:var(--serif); font-weight:700; font-size:24px; color:var(--ink); animation:spin 10s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mentor h3{font-size:21px; margin-top:16px}
+.mentor .creds{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.mentor .creds span{font-size:12.5px; font-weight:600; padding:3px 9px; border-radius:6px; background:var(--cobalt-50); color:var(--cobalt)}
+.mentor p{color:var(--slate); font-size:15px; margin-top:12px}
+.mstat{display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:26px; font-size:15px; color:var(--slate)}
+.mstat b{color:var(--ink)}
+@media (max-width:1000px){ .mentors{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .mentors{grid-template-columns:1fr} }
+
+/* Feedback */
+.fbgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.fb{border:1px solid var(--rule); border-radius:12px; padding:20px; background:#fff}
+.fb .stars{position:relative; display:inline-block; font-size:17px; letter-spacing:2px; color:var(--rule); line-height:1}
+.fb .stars b{position:absolute; left:0; top:0; overflow:hidden; white-space:nowrap; color:#E0A21B; width:0; transition:width 1s cubic-bezier(.16,1,.3,1)}
+.fb.in .stars b{width:var(--w)}
+.fb .rt{font-size:13px; font-weight:700; color:var(--ink); margin-left:8px}
+.fb q{display:block; font-family:var(--serif); font-size:18px; line-height:1.35; margin-top:12px; quotes:"\201C" "\201D"}
+.fb .who{margin-top:14px; font-size:14px; font-weight:700}
+.fb .who small{display:block; font-weight:500; color:var(--slate); font-size:13px}
+.fbsum{display:flex; align-items:center; gap:16px; margin-top:6px}
+.fbsum .big{font-family:var(--serif); font-size:44px; font-weight:700}
+.samplenote{margin-top:14px; font-size:13px; color:var(--amber)}
+@media (max-width:1000px){ .fbgrid{grid-template-columns:1fr 1fr} }
+@media (max-width:600px){ .fbgrid{grid-template-columns:1fr} }
+
+
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1; transform:none}
+.brand em{font-style:normal; color:var(--cobalt)}
+.brand sup{font-size:10px; font-weight:600; color:var(--slate)}
+.brand .mark{background:var(--ink)}
+.hero .tagline{margin-top:10px; font-size:17px; font-weight:600; color:var(--pass)}
+/* Scroll animations for key sections */
+.rv{opacity:0; transform:translateY(18px); transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1); transition-delay:var(--d,0ms)}
+.rv.side{transform:translateX(-22px)}
+.rv.pop{transform:scale(.92)}
+.rv.in{opacity:1; transform:none}
+.mod.open .sec{animation:secIn .5s cubic-bezier(.16,1,.3,1) both; animation-delay:calc(var(--i,0) * 70ms)}
+.mod.open .sec li{animation:chipIn .35s ease both; animation-delay:calc(var(--i,0) * 70ms + var(--j,0) * 22ms + 120ms)}
+.mod.open .cap{animation:secIn .55s cubic-bezier(.16,1,.3,1) both; animation-delay:.35s}
+@keyframes secIn{from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:none}}
+@keyframes chipIn{from{opacity:0; transform:scale(.85)} to{opacity:1; transform:none}}
+.disc{display:flex; gap:10px; align-items:flex-start; margin-top:30px; padding:12px 16px; border-radius:10px; background:var(--mist); border:1px dashed #C5CEF0; color:var(--slate); font-size:14.5px}
+.disc svg{flex:none; width:18px; height:18px; color:var(--cobalt); margin-top:2px}
+/* Fees in INR + USD */
+.fee .price .u{font-family:var(--sans); font-size:15px; font-weight:600; color:var(--slate); margin-left:6px}
+.fee .incl{display:block; font-size:14px; color:var(--slate); margin-top:6px}
+.fee .usd{display:flex; align-items:baseline; flex-wrap:wrap; gap:8px; margin-top:14px; padding-top:12px; border-top:1px dashed var(--rule)}
+.fee .usd b{font-family:var(--serif); font-size:28px}
+.fee .usd span{font-size:13.5px; color:var(--slate)}
+.feenote{margin-top:18px; font-size:14px; color:var(--slate)}
+.tz small{display:block; color:var(--slate); font-weight:500; font-size:13px}
+.enroll-box .opt .pr{display:block; margin-top:6px; font-size:14px; color:var(--ink)!important; font-weight:600}
+.enroll-box .ebline{margin-top:10px; padding:10px 14px; border-radius:8px; background:var(--amber-50); color:var(--amber); font-weight:700; font-size:14.5px}
+
+/* Why With Us Now: bi-directional ticker */
+.wnow{border-bottom:1px solid var(--rule); background:linear-gradient(180deg,#FAFBFE,#fff)}
+.wnow .grid{display:grid; grid-template-columns:auto 1fr; align-items:stretch}
+.wnow .lab{display:flex; flex-direction:column; justify-content:center; gap:4px; padding:14px 22px; border-right:1px solid var(--rule); background:#fff; min-width:190px}
+.wnow .lab b{font-family:var(--serif); font-size:21px; line-height:1.1; background:linear-gradient(90deg,#2340C8,#7A4DDB,#0E9467,#D98A3D,#2340C8); background-size:300% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:hue 8s linear infinite}
+.wnow .lab span{font-size:12.5px; color:var(--slate); font-weight:600}
+.wnow .rows{overflow:hidden; display:flex; flex-direction:column; gap:8px; padding:10px 0; mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.wnow .wtrack{display:flex; gap:12px; width:max-content; animation:wnL 55s linear infinite}
+.wnow .wtrack.r{animation-name:wnR; animation-duration:62s}
+.wnow .rows:hover .wtrack{animation-play-state:paused}
+@keyframes wnL{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+@keyframes wnR{from{transform:translateX(-50%)} to{transform:translateX(0)}}
+.wn{display:flex; align-items:center; gap:10px; white-space:nowrap; border:1px solid var(--rule); background:#fff; border-radius:99px; padding:6px 16px 6px 6px; font-size:14.5px; color:var(--ink)}
+.wn i{flex:none; width:30px; height:30px; border-radius:50%; display:grid; place-items:center; color:#fff}
+.wn i svg{width:16px; height:16px}
+.wnow .wn b{display:inline; font-family:var(--sans); font-size:inherit; font-weight:700; line-height:inherit; margin:0}
+.wnow .wn > span{display:inline; font-family:var(--sans)}
+.wnow .lab{align-self:stretch}
+@media (max-width:760px){ .wnow .grid{grid-template-columns:1fr} .wnow .lab{flex-direction:row; align-items:baseline; border-right:0; border-bottom:1px solid var(--rule); padding:10px 16px} .wnow .lab b{font-size:18px} }
+@media (prefers-reduced-motion:reduce){ .wnow .rows{overflow-x:auto} }
+@media (max-width:480px){ .nav .btn{white-space:nowrap; padding:8px 12px; font-size:13.5px} .brand{font-size:15.5px} }
+
+/* ===== Scroll experience ===== */
+/* 1. Progress rail under the menu */
+.prail{position:absolute; left:0; right:0; bottom:-1px; height:3px; background:transparent}
+.prail .fill{position:absolute; left:0; top:0; bottom:0; width:0; background:linear-gradient(90deg,#2340C8,#7A4DDB,#0E9467)}
+.prail .mk{position:absolute; top:50%; width:11px; height:11px; margin:-5.5px 0 0 -5.5px; border-radius:50%; background:#fff; border:2px solid #C9D2E6; cursor:pointer; padding:0; transition:border-color .3s, background .3s, transform .3s}
+.prail .mk.past{border-color:var(--cobalt); background:var(--cobalt)}
+.prail .mk.cur{transform:scale(1.35); border-color:var(--cobalt); background:#fff}
+.prail .mk span{position:absolute; top:14px; left:50%; transform:translateX(-50%); white-space:nowrap; font-size:11.5px; font-weight:700; color:var(--cobalt); background:#fff; border:1px solid #C5CEF0; border-radius:99px; padding:2px 8px; opacity:0; pointer-events:none; transition:opacity .25s}
+.prail .mk:hover span{opacity:1}
+.nav ul a.act{color:var(--cobalt)}
+@media (max-width:900px){ .prail .mk{display:none} }
+
+/* 4. Pinned project story */
+.story{display:grid; grid-template-columns:1fr 1.05fr; gap:56px; align-items:start}
+.story .pin{position:sticky; top:110px}
+.sv{border:1px solid var(--rule); border-radius:14px; background:#fff; box-shadow:0 30px 60px -44px rgba(14,26,43,.45); overflow:hidden}
+.sv .hd{display:flex; justify-content:space-between; align-items:center; padding:14px 18px; background:var(--mist); border-bottom:1px solid var(--rule); font-family:var(--mono); font-size:13px; color:var(--slate)}
+.sv .hd b{font-family:var(--serif); font-size:20px; color:var(--ink)}
+.sv ol{list-style:none; margin:0; padding:8px 0; position:relative}
+.sv li{display:grid; grid-template-columns:30px 1fr auto; gap:10px; align-items:center; padding:7px 18px; font-size:15px; color:var(--soft); transition:color .35s, background .35s}
+.sv li .d{width:14px; height:14px; border-radius:50%; border:2px solid var(--rule); background:#fff; justify-self:center; transition:all .35s}
+.sv li.done{color:var(--ink)} .sv li.done .d{background:var(--pass); border-color:var(--pass)}
+.sv li.now{color:var(--ink); background:var(--cobalt-50); font-weight:700} .sv li.now .d{background:var(--cobalt); border-color:var(--cobalt); box-shadow:0 0 0 5px rgba(35,64,200,.15)}
+.sv li small{font-size:12px; font-family:var(--mono); color:var(--slate); font-weight:500}
+.sv .ft{padding:12px 18px; border-top:1px solid var(--rule); display:flex; align-items:center; gap:12px; font-size:13.5px; color:var(--slate)}
+.sv .bar{flex:1; height:6px; border-radius:3px; background:var(--mist); overflow:hidden}
+.sv .bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,#2340C8,#0E9467); transition:width .5s cubic-bezier(.16,1,.3,1)}
+.steps2{list-style:none; margin:0; padding:0}
+.steps2 li{min-height:58vh; display:flex; flex-direction:column; justify-content:center; padding:10px 0; opacity:.28; transition:opacity .45s}
+.steps2 li.now{opacity:1}
+.steps2 .no{font-family:var(--mono); font-size:13px; color:var(--cobalt); font-weight:600}
+.steps2 h3{font-size:clamp(26px,3vw,36px); margin-top:6px}
+.steps2 p{color:var(--slate); font-size:17.5px; margin-top:10px; max-width:46ch}
+.steps2 .mods{display:inline-block; margin-top:14px; font-size:13.5px; font-weight:700; color:var(--cobalt); background:var(--cobalt-50); border-radius:6px; padding:4px 10px; align-self:flex-start}
+.steps2 li:last-child{min-height:45vh}
+@media (max-width:900px){ .story{grid-template-columns:1fr; gap:24px} .story .pin{position:static} .steps2 li{min-height:0; opacity:1; padding:18px 0; border-bottom:1px solid var(--rule)} }
+
+/* 5. Curriculum timeline that draws itself */
+.hrs-pill{position:sticky; top:84px; z-index:5; display:flex; justify-content:flex-end; pointer-events:none; margin:-6px 0 10px}
+.hrs-pill span{pointer-events:auto; background:#fff; border:1px solid #C5CEF0; border-radius:99px; padding:6px 14px; font-size:14px; color:var(--slate); box-shadow:0 10px 24px -18px rgba(35,64,200,.6)}
+.hrs-pill b{font-family:var(--serif); font-size:18px; color:var(--cobalt); font-variant-numeric:tabular-nums}
+.mod .node{transition:border-color .3s, background .3s, color .3s, transform .3s}
+.mod.reached .node{border-color:var(--cobalt); color:var(--cobalt); background:var(--cobalt-50); transform:scale(1.08)}
+.mod.open.reached .node{background:var(--cobalt); color:#fff}
+
+/* 10. Sticky price summary */
+.psum{position:fixed; right:22px; bottom:22px; z-index:45; width:320px; background:#fff; border:1px solid var(--rule); border-radius:14px; box-shadow:0 30px 60px -30px rgba(14,26,43,.45); padding:16px 18px; transform:translateY(130%); opacity:0; transition:transform .45s cubic-bezier(.16,1,.3,1), opacity .3s}
+.psum.show{transform:none; opacity:1}
+.psum .top{display:flex; justify-content:space-between; align-items:center}
+.psum .top small{font-size:12px; font-weight:700; color:var(--slate); letter-spacing:.02em}
+.psum .x{border:0; background:none; font-size:18px; line-height:1; color:var(--soft); cursor:pointer; padding:2px 4px}
+.psum .sw{display:flex; gap:4px; margin-top:10px; background:var(--mist); border-radius:8px; padding:3px}
+.psum .sw button{flex:1; border:0; background:none; font:600 12px var(--sans); white-space:nowrap; padding:6px; border-radius:6px; cursor:pointer; color:var(--slate)}
+.psum .sw button[aria-pressed="true"]{background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.psum .t{font-size:13px; color:var(--slate); margin-top:10px; line-height:1.45}
+.psum .pr{margin-top:10px; font-family:var(--serif); font-size:26px; font-weight:700}
+.psum .pr small{font-family:var(--sans); font-size:13px; color:var(--slate); font-weight:600}
+.psum .eb{font-size:12.5px; font-weight:700; color:var(--amber); margin-top:2px}
+.psum .seats{font-size:13px; color:var(--red); font-weight:700; margin-top:6px}
+.psum .btn{width:100%; margin-top:12px}
+@media (max-width:900px){ .psum{display:none} }
+@media (prefers-reduced-motion:reduce){ .steps2 li{opacity:1} }
+
+/* ===== Free masterclass banner ===== */
+.mclass{position:relative; overflow:hidden; color:#fff; padding:56px 0; background:linear-gradient(125deg,#1A2C9C 0%,#4B33B8 35%,#7A4DDB 55%,#0E7F5F 85%,#1A2C9C 100%); background-size:260% 260%; animation:mcBg 20s ease-in-out infinite}
+@keyframes mcBg{0%,100%{background-position:0% 50%} 50%{background-position:100% 50%}}
+.mclass::before,.mclass::after{content:""; position:absolute; border-radius:50%; filter:blur(60px); opacity:.45; pointer-events:none}
+.mclass::before{width:420px; height:420px; left:-120px; top:-160px; background:#D98A3D; animation:mcBlob 16s ease-in-out infinite}
+.mclass::after{width:360px; height:360px; right:-100px; bottom:-160px; background:#2FD3A0; animation:mcBlob 19s ease-in-out infinite reverse}
+@keyframes mcBlob{0%,100%{transform:translate(0,0)} 50%{transform:translate(80px,40px)}}
+.mclass .wrap{position:relative; z-index:1}
+.mc-grid{display:grid; grid-template-columns:1fr 1.2fr; gap:44px; align-items:start}
+.mc-eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; letter-spacing:.04em; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); padding:6px 12px; border-radius:99px}
+.mc-eyebrow i{width:8px; height:8px; border-radius:50%; background:#FF6B5A; box-shadow:0 0 0 0 rgba(255,107,90,.7); animation:mcPing 1.8s infinite}
+@keyframes mcPing{70%{box-shadow:0 0 0 10px rgba(255,107,90,0)} 100%{box-shadow:0 0 0 0 rgba(255,107,90,0)}}
+.mclass h2{color:#fff; font-size:clamp(28px,3.6vw,44px); margin-top:16px; line-height:1.1}
+.mclass h2 em{font-style:normal; background:linear-gradient(90deg,#FFD58A,#FFFFFF,#9FF0D2); -webkit-background-clip:text; background-clip:text; color:transparent}
+.mclass .mc-sub{color:#E3E7FF; font-size:17.5px; margin-top:14px; max-width:52ch}
+.mc-agenda{list-style:none; margin:24px 0 0; padding:0; display:grid; gap:8px}
+.mc-agenda li{display:grid; grid-template-columns:78px 1fr; gap:12px; align-items:center; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:10px 14px}
+.mc-agenda li b{font-family:var(--mono); font-size:13px; color:#FFD58A}
+.mc-agenda li span{font-weight:600}
+.mc-agenda li small{display:block; color:#D5DBFF; font-weight:400; font-size:13.5px}
+.mc-next{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:20px; font-size:14.5px; color:#E3E7FF}
+.mc-next b{font-family:var(--mono); font-size:15px; color:#fff; background:rgba(14,26,43,.35); padding:4px 10px; border-radius:6px}
+.mc-cards{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.mc-card{position:relative; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28); border-radius:14px; padding:18px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); display:flex; flex-direction:column; transition:transform .25s, background .25s}
+.mc-card:hover{transform:translateY(-3px); background:rgba(255,255,255,.18)}
+.mc-card.next{border-color:#FFD58A; box-shadow:0 0 0 2px rgba(255,213,138,.35), 0 24px 40px -24px rgba(0,0,0,.5)}
+.mc-card.past{opacity:.55}
+.mc-card .tag{display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; padding:3px 9px; border-radius:99px; background:rgba(14,26,43,.35); align-self:flex-start}
+.mc-card .tag svg{width:14px; height:14px}
+.mc-card .row{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.mc-card .nx{font-size:11.5px; font-weight:800; color:#1A2C9C; background:#FFD58A; padding:3px 8px; border-radius:99px}
+.mc-card .dt{font-family:var(--serif); font-size:24px; font-weight:700; margin-top:10px; line-height:1.15}
+.mc-card .tm{font-size:13.5px; color:#E3E7FF; margin-top:4px}
+.mc-card .tm b{color:#fff}
+.mc-card .dd{margin-top:12px; font-size:13px; color:#FFD58A; font-weight:700}
+.mc-card .dt2{font-size:15px; font-weight:600; margin-top:2px; line-height:1.35}
+.mc-card .btn{margin-top:auto; background:#fff; color:#1A2C9C; border-color:#fff; width:100%}
+.mc-card .btn:hover{background:#FFF5E3}
+.mc-card .sp{height:14px}
+.mc-foot{margin-top:16px; font-size:13.5px; color:#D5DBFF}
+@media (max-width:980px){ .mc-grid{grid-template-columns:1fr} }
+@media (max-width:560px){ .mc-cards{grid-template-columns:1fr} .mclass{padding:40px 0} }
+@media (prefers-reduced-motion:reduce){ .mclass,.mclass::before,.mclass::after,.mc-eyebrow i{animation:none} }
+
+/* ===== Blogs & whitepapers ===== */
+.blogs{display:grid; grid-template-columns:repeat(auto-fill,minmax(205px,1fr)); gap:14px}
+.blog{display:flex; flex-direction:column; border:1px solid var(--rule); border-radius:14px; background:#fff; padding:20px; transition:transform .25s, box-shadow .25s, border-color .25s}
+.blog:hover{transform:translateY(-3px); border-color:#AEBBEA; box-shadow:0 22px 40px -30px rgba(35,64,200,.55)}
+.blog .top{display:flex; justify-content:space-between; align-items:center; gap:8px}
+.blog .kind{font-size:12px; font-weight:700; padding:3px 9px; border-radius:99px; background:var(--cobalt-50); color:var(--cobalt)}
+.blog .kind.wp{background:var(--pass-50); color:var(--pass)}
+.blog .med{width:26px; height:26px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-family:var(--serif); font-weight:700; font-size:14px}
+.blog h3{font-size:19px; margin-top:14px; line-height:1.25}
+.blog p{color:var(--slate); font-size:14.5px; margin-top:8px}
+.blog .meta{margin-top:auto; padding-top:14px; display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--slate)}
+.blog .go{font-weight:700; color:var(--cobalt); text-decoration:none}
+.blog.soon .go{color:var(--soft); cursor:default}
+.blog.soon{background:#FBFCFE}
+.blogs-foot{margin-top:18px; font-size:14.5px; color:var(--slate)}
+
+/* ===== Welcome pop-up ===== */
+.wpop{position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:20px; background:rgba(14,26,43,.55); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); opacity:0; pointer-events:none; transition:opacity .35s}
+.wpop.open{opacity:1; pointer-events:auto}
+.wpop .box{position:relative; width:min(560px,100%); max-height:calc(100vh - 40px); overflow:auto; border-radius:20px; color:#fff; padding:30px 30px 24px; background:linear-gradient(125deg,#1A2C9C 0%,#4B33B8 35%,#7A4DDB 55%,#0E7F5F 85%,#1A2C9C 100%); background-size:260% 260%; animation:mcBg 16s ease-in-out infinite; box-shadow:0 40px 80px -30px rgba(0,0,0,.6); transform:translateY(16px) scale(.97); transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.wpop.open .box{transform:none}
+.wpop .x{position:absolute; top:12px; right:14px; width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff; font-size:20px; line-height:1; cursor:pointer}
+.wpop .x:hover{background:rgba(255,255,255,.25)}
+.wpop .eb{display:inline-flex; gap:8px; align-items:center; font-size:12.5px; font-weight:700; letter-spacing:.04em; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); padding:5px 11px; border-radius:99px}
+.wpop .eb i{width:8px; height:8px; border-radius:50%; background:#FFD58A}
+.wpop .pstage{position:relative; min-height:128px; margin-top:18px}
+.wpop .sl{position:absolute; inset:0; opacity:0; transform:translateX(18px); transition:opacity .5s, transform .5s cubic-bezier(.16,1,.3,1)}
+.wpop .sl.on{opacity:1; transform:none}
+.wpop .sl .n{font-family:var(--mono); font-size:12.5px; color:#FFD58A}
+.wpop .sl h3{color:#fff; font-size:clamp(24px,3.4vw,32px); line-height:1.15; margin-top:6px}
+.wpop .sl p{color:#E3E7FF; font-size:16px; margin-top:10px}
+.wpop .bars{display:flex; gap:5px; margin-top:14px}
+.wpop .bars i{flex:1; height:4px; border-radius:2px; background:rgba(255,255,255,.25); overflow:hidden; position:relative}
+.wpop .bars i b{position:absolute; inset:0; background:#FFD58A; transform:scaleX(0); transform-origin:left}
+.wpop .bars i.done b{transform:scaleX(1)}
+.wpop .bars i.run b{transform:scaleX(1); transition:transform var(--dur,2600ms) linear}
+.wpop .facts{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:18px}
+.wpop .facts div{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22); border-radius:10px; padding:10px 12px; font-size:13.5px; color:#E3E7FF}
+.wpop .facts b{display:block; color:#fff; font-size:15px}
+.wpop .ctas{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+.wpop .ctas .btn{flex:1; min-width:200px; text-align:center}
+.wpop .ctas .b1{background:#FFD58A; border-color:#FFD58A; color:#1A2C9C}
+.wpop .ctas .b2{background:transparent; border-color:rgba(255,255,255,.6); color:#fff}
+.wpop .skip{margin-top:12px; text-align:center; font-size:13px; color:#D5DBFF}
+.wpop .skip button{background:none; border:0; color:#fff; text-decoration:underline; cursor:pointer; font:inherit}
+@media (max-width:520px){ .wpop .box{padding:26px 20px 20px} .wpop .facts{grid-template-columns:1fr} .wpop .pstage{min-height:150px} }
+@media (prefers-reduced-motion:reduce){ .wpop .box{animation:none} .wpop .sl{transition:none} }
+/* Ten-link menu */
+.nav ul{gap:12px !important}
+.nav .wrap{gap:14px}
+.nav ul a{font-size:14px}
+@media (max-width:1240px){ .nav ul{display:none !important} }
+
+/* ===== Way back to the homepage ===== */
+.crumb{border-bottom:1px solid var(--rule); background:#fff}
+.crumb .wrap{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:8px; padding-bottom:8px; font-size:14px}
+.crumb .back{display:inline-flex; align-items:center; gap:6px; font-weight:700; color:var(--cobalt); text-decoration:none; padding:4px 12px 4px 8px; border:1px solid #C5CEF0; border-radius:99px; background:var(--cobalt-50)}
+.crumb .back:hover{background:#E1E7FB}
+.crumb .back svg{width:16px; height:16px}
+.crumb ol{display:flex; flex-wrap:wrap; align-items:center; gap:6px; list-style:none; margin:0; padding:0; color:var(--slate)}
+.crumb ol li+li::before{content:"/"; margin-right:6px; color:var(--soft)}
+.crumb ol a{color:var(--slate); text-decoration:none}
+.crumb ol a:hover{color:var(--cobalt); text-decoration:underline}
+.crumb ol [aria-current]{color:var(--ink); font-weight:600}
+.homefab{position:fixed; left:22px; bottom:22px; z-index:44; display:inline-flex; align-items:center; gap:8px; padding:10px 16px 10px 12px; border-radius:99px; background:var(--ink); color:#fff; text-decoration:none; font-weight:700; font-size:14px; box-shadow:0 16px 30px -16px rgba(14,26,43,.6); opacity:0; transform:translateY(12px); pointer-events:none; transition:opacity .3s, transform .3s}
+.homefab.show{opacity:1; transform:none; pointer-events:auto}
+.homefab:hover{background:var(--cobalt)}
+.homefab svg{width:18px; height:18px}
+@media (max-width:760px){ .homefab{bottom:84px; left:14px; padding:10px} .homefab span{display:none} .crumb ol{display:none} }
+@media (prefers-reduced-motion:reduce){ .homefab{transition:none} }
+/* Mobile sticky CTA */
+.mcta{display:none}
+@media (max-width:760px){
+  .mcta{display:flex; position:fixed; left:0; right:0; bottom:0; z-index:50; gap:10px; padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px)); background:#fff; border-top:1px solid var(--rule); align-items:center; justify-content:space-between; font-size:14px}
+  .mcta b{font-size:17px}
+  body{padding-bottom:70px}
+  section{padding:68px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important; transition:none!important}
+  .rv,.reveal{opacity:1!important; transform:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     GOOGLE FORM LINKS: paste your two links here
+     Link 1 = Batch 11 (Weekend), Link 2 = Batch 12 (Weekdays)
+     ============================================================ -->
+<script>
+  const FORM_LINKS = {
+    weekend: "https://forms.gle/REPLACE_WITH_GOOGLE_FORM_LINK_1",
+    weekday: "https://forms.gle/REPLACE_WITH_GOOGLE_FORM_LINK_2"
+  };
+</script>
+
+<!-- ============================================================
+     FREE MASTERCLASS: paste the Google Form link for masterclass registrations
+     ============================================================ -->
+<script>
+  const MASTERCLASS_FORM = "https://forms.gle/REPLACE_WITH_MASTERCLASS_FORM_LINK";
+</script>
+
+<div class="ribbon" role="region" aria-label="Offer">
+  <div class="wrap" id="ribbon">
+    <span><strong>Early Bird offers close 30 November: 10% off</strong></span>
+    <span class="cd" id="ribbonCd">--d --h --m --s</span>
+    <span>Groups of more than 5 save 15%</span>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="FDEAgentic100x home"><span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="4" cy="10" r="2.4" fill="#fff"/><circle cx="16" cy="4" r="2.4" fill="#7C93FF"/><circle cx="16" cy="16" r="2.4" fill="#7C93FF"/><path d="M6 9.2L14 4.8M6 10.8L14 15.2" stroke="#fff" stroke-width="1.4"/></svg></span><span>FDEAgentic<em>100x</em><sup>™</sup></span></a>
+    <ul>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#pillars">Six pillars</a></li>
+      <li><a href="#roadmap">Curriculum</a></li>
+      <li><a href="#sandbox">Sandbox</a></li>
+      <li><a href="#capstone">Capstone</a></li>
+      <li><a href="#batches">Batches</a></li>
+      <li><a href="#fees">Fees</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+    </ul>
+    <a class="btn small" href="#enroll">Reserve a seat</a>
+  </div>
+  <div class="prail" id="prail" aria-hidden="true"><div class="fill" id="prailFill"></div></div>
+</nav>
+
+<!-- WAY BACK TO THE HOMEPAGE -->
+<div class="crumb" aria-label="Breadcrumb">
+  <div class="wrap">
+    <a class="back" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Back to all programs</a>
+    <ol>
+      <li><a href="index.html">FDEAgentic100x™ home</a></li>
+      <li><a href="index.html#courses">Programs</a></li>
+      <li><span aria-current="page">FDE 100X™</span></li>
+    </ol>
+  </div>
+</div>
+<a class="homefab" id="homeFab" href="index.html" aria-label="Back to FDEAgentic100x home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Home</span></a>
+
+<!-- WHY WITH US NOW: two ticker rows moving in opposite directions (filled by script) -->
+<div class="wnow" role="region" aria-label="Why with us now">
+  <div class="grid">
+    <div class="lab"><b>Why With Us Now</b><span>FDE 100X™ in six reasons</span></div>
+    <div class="rows"><div class="wtrack" id="wnL"></div><div class="wtrack r" id="wnR"></div></div>
+  </div>
+</div>
+
+<!-- FREE MASTERCLASS BANNER (filled by script; edit MASTERCLASS below) -->
+<section class="mclass" id="masterclass" aria-label="Free live masterclass">
+  <div class="wrap mc-grid">
+    <div>
+      <span class="mc-eyebrow"><i></i>FREE LIVE MASTERCLASS | 30 MINUTES</span>
+      <h2 id="mcTitle"></h2>
+      <p class="mc-sub" id="mcSub"></p>
+      <ol class="mc-agenda" id="mcAgenda"></ol>
+      <div class="mc-next" id="mcNext"></div>
+    </div>
+    <div>
+      <div class="mc-cards" id="mcCards"></div>
+      <p class="mc-foot">Free to attend, live online. Seats are limited in every session. Times shown in IST and US Eastern Time (ET).</p>
+    </div>
+  </div>
+</section>
+
+<div class="gband" role="region" aria-label="Internship or money back">
+  <div class="wrap"><div class="gband-in">
+    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M32 5l22 8v16c0 15-10 25-22 30C20 54 10 44 10 29V13z"/><path d="M22 32l7 7 14-15"/></svg>
+    <div><b>Top 5% get a 3-month internship. Otherwise, money back.</b><p>The best-performing 5% of learners earn a 3-month internship opportunity. If you don't, you get your money back.</p></div>
+    <a class="fine" href="#fees">See fees</a>
+  </div></div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="pbanner" role="region" aria-label="Why FDE 100X" aria-live="polite">
+      <div class="in">
+        <div class="pmsg" id="pmsg"></div>
+        <div class="punch"><strong>Real projects. Real mentors. Real production.</strong><div class="pdots" id="pdots" role="tablist" aria-label="Banner messages"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1>FDE 100X™</h1>
+      <p class="sub">Enterprise AI Engineering &amp; Production Systems</p>
+      <p class="tagline">Domain-led AI transformation, engineered for production.</p>
+      <p class="motto"><span>Design.</span> <span>Build.</span> <span>Deploy.</span> <span>Operate.</span> <span>Transform.</span></p>
+      <p class="vp">Become a Full-Stack AI / Forward Deployed Engineer who takes an enterprise AI problem from business discovery all the way to a production system, then evaluates, secures, observes and keeps improving it. You leave with production-ready work, not just a certificate.</p>
+      <div class="chips" aria-label="Program format">
+        <span class="chip">100 Hours</span><span class="chip">Production-First</span><span class="chip">Project-Based</span><span class="chip">Cloud-Native</span><span class="chip">Enterprise AI</span><span class="chip" style="border-color:#F0D29C;color:var(--amber);background:var(--amber-50)">Free Amazon Bedrock book</span><span class="chip" style="border-color:#C5CEF0;color:var(--cobalt);background:var(--cobalt-50)">Code from Day 1</span>
+      </div>
+      <div class="ctas">
+        <a class="btn" href="#batches">Choose your batch</a>
+        <a class="btn ghost" href="#roadmap">Explore the curriculum</a>
+      </div>
+      <p class="start">New batches: weekday from <b>Mon 11 January 2027</b>, weekend from <b>Sat 16 January 2027</b>.</p>
+    </div>
+
+    <div class="run" aria-label="Every project follows the FDE Production Transformation Framework">
+      <div class="run-top" id="runTop"><span>fde-100x / enterprise-ai-project</span><span class="state"><i class="dot"></i><span id="runState">running</span></span></div>
+      <ol class="stages" id="stages"></ol>
+      <div class="run-foot">
+        <span class="release" id="release">Production release pending</span>
+        <button class="rerun" id="rerun" type="button">Run again</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="proof" aria-label="Program at a glance">
+  <div class="wrap">
+    <div class="cell"><div class="n"><span data-count="300">0</span>+</div><div class="l">students have completed the course</div></div>
+    <div class="cell"><div class="n"><span data-count="100">0</span></div><div class="l">hours, 12 modules</div></div>
+    <div class="cell"><div class="n"><span data-count="10">0</span>+</div><div class="l">production-oriented projects</div></div>
+    <div class="cell"><div class="n"><span data-count="6">0</span> mo</div><div class="l">post-program support</div></div>
+    <div class="cell"><div class="n">Top <span data-count="5">0</span>%</div><div class="l">get a 3-month internship</div></div>
+  </div>
+</div>
+
+<!-- PROJECT STORY: pinned panel, scroll-driven -->
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Watch an enterprise AI project come to life</h2>
+      <p class="lede">Scroll through the ten stages every FDE 100X™ project follows, from a business problem to a measurable outcome in production.</p>
+    </div>
+    <div class="story">
+      <div class="pin">
+        <div class="sv" aria-hidden="true">
+          <div class="hd"><span>fde-100x / your-capstone</span><b id="svNo">01 / 10</b></div>
+          <ol id="svList"></ol>
+          <div class="ft"><span id="svState">In progress</span><div class="bar"><i id="svBar"></i></div></div>
+        </div>
+      </div>
+      <ol class="steps2" id="steps2"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM PROMISE -->
+<section id="program">
+  <div class="wrap promise">
+    <div>
+      <p class="sec-head num" style="font-family:var(--serif);color:var(--cobalt);margin-bottom:10px">Program promise</p>
+      <blockquote>Become a Full-Stack AI / Forward Deployed Engineer capable of taking an enterprise AI problem from business discovery to production deployment, evaluation, security, observability and continuous optimization.</blockquote>
+    </div>
+    <div>
+      <h3>What the program combines</h3>
+      <p class="lede" style="font-size:16.5px;margin-top:8px">Every layer an enterprise AI system needs, learned together, the way you will use it on the job.</p>
+      <div class="stack" id="stack" style="margin-top:18px"></div>
+    </div>
+  </div>
+  <div class="wrap"><p class="disc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>This is an overview. Details of this section are covered in depth during the program.</span></p></div>
+</section>
+
+<!-- WHAT MAKES IT DIFFERENT -->
+<section id="different">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What makes this FDE program different</h2>
+      <p class="lede">This is not another Generative AI course. Most learning stops at a certificate. FDE 100X™ follows the path a real enterprise AI project takes to production.</p>
+    </div>
+    <div class="flow-row">
+      <div class="lab">Traditional learning<small>Ends at a certificate</small></div>
+      <div class="flow old" id="flowOld"></div>
+    </div>
+    <div class="flow-row">
+      <div class="lab">The FDE model<small>Ends at production</small></div>
+      <div class="flow new" id="flowNew"></div>
+    </div>
+
+    <h3 style="margin-top:56px">Every module has four dimensions</h3>
+    <div class="dims">
+      <div class="dim">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h10a3 3 0 013 3v17a2 2 0 00-2-2H4zM28 7H18a3 3 0 00-3 3v17a2 2 0 012-2h11z"/></svg>
+        <h3>Learn</h3><p>Understand the technology.</p>
+      </div>
+      <div class="dim">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 9l-7 7 7 7M21 9l7 7-7 7M18 6l-4 20"/></svg>
+        <h3>Build</h3><p>Implement a working solution.</p>
+      </div>
+      <div class="dim">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="6" width="24" height="8" rx="2"/><rect x="4" y="18" width="24" height="8" rx="2"/><circle cx="9" cy="10" r="1.2" fill="currentColor"/><circle cx="9" cy="22" r="1.2" fill="currentColor"/></svg>
+        <h3>Productionize</h3><p>Apply architecture, security, scalability, reliability and cost principles.</p>
+      </div>
+      <div class="dim">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 24l8-8 5 5 11-11M20 10h8v8"/></svg>
+        <h3>Transform</h3><p>Connect the technology to an enterprise business problem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="framework">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The FDE Production Transformation Framework™</h2>
+      <p class="lede">Every major project follows the same ten stages. It is the common methodology across the entire academy, so by the capstone it is second nature.</p>
+    </div>
+    <ol class="steps" id="steps"></ol>
+    <p class="disc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>This is an overview. Details of this section are covered in depth during the program.</span></p>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The FDE Six-Pillar Architecture Framework</h2>
+      <p class="lede">The program uses the six AWS Well-Architected pillars as a cross-cutting production framework: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization and Sustainability.</p>
+    </div>
+    <div class="pillars" id="pillarGrid"></div>
+    <div class="note"><b>Not just an AWS exercise</b>AWS officially defines these as the six pillars of its Well-Architected Framework. Google Cloud's current Well-Architected Framework similarly covers operational excellence, security, reliability, cost optimization, performance optimization and sustainability, with an explicit AI/ML perspective.</div>
+    <div class="note amber"><b>Critical point</b>These pillars do not live only in one architecture module. They appear in every major capstone.</div>
+    <p class="disc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>This is an overview. Details of this section are covered in depth during the program.</span></p>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section id="hours">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The 100-hour curriculum</h2>
+      <p class="lede">Twelve modules, weighted by what matters in production. RAG and Agents with MCP carry the most hours.</p>
+    </div>
+    <table class="hours" id="hoursTbl" aria-label="Module hours"></table>
+    <div class="note"><b>Why Module 5 has 12 hours</b>The increase is deliberate. MCP is now important enough to have substantial hands-on coverage, rather than being buried under generic function calling.</div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Module-by-module roadmap</h2>
+      <p class="lede">Open any module to see every topic, the module capstone and the production artifact you will add to your portfolio.</p>
+    </div>
+    <div class="rm-controls">
+      <button class="btn small ghost" id="expandAll" type="button">Expand all modules</button>
+      <button class="btn small ghost" id="collapseAll" type="button">Collapse all modules</button>
+    </div>
+    <div class="hrs-pill" aria-live="off"><span><b id="hrsDone">0</b> of 100 hours on your path</span></div>
+    <ol class="roadmap" id="roadmapList"><span class="prog" id="rmProg"></span></ol>
+    <p class="disc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>This is an overview. Details of this section are covered in depth during the program.</span></p>
+  </div>
+</section>
+
+<!-- SANDBOX -->
+<section id="sandbox">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Write real code from Day 1</h2>
+      <p class="lede">You get ready-to-run starter templates and a pre-configured sandbox before the first class. No setup weekend, no installing dependencies while the lecture moves on. Open it, run it, change it.</p>
+    </div>
+    <div class="sbx">
+      <ul class="sbx-feats">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M12 15h5"/></svg><div><b>Pre-configured coding sandbox</b><span>Python and TypeScript environments with the LLM, RAG, agent and MCP SDKs already installed.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/></svg><div><b>A starter template for every module</b><span>Twelve templates, each the scaffold for that module's production artifact, with tests and TODOs where you write the code.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><div><b>Sample enterprise datasets</b><span>Insurance policies, claims, support tickets and product catalogues to build against from the first session.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 014 4v0"/></svg><div><b>Git-ready from the start</b><span>Every template is a repository, so your GitHub portfolio grows module by module.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><div><b>Production checks built in</b><span>Evaluation, tracing and security hooks are wired into the templates, so good habits start on Day 1.</span></div></li>
+      </ul>
+      <div>
+        <div class="ide" aria-label="Starter template preview">
+          <div class="ide-tabs" role="tablist" id="ideTabs"></div>
+          <pre id="ideCode"></pre>
+          <div class="ide-out" id="ideOut"></div>
+          <div class="ide-foot"><span id="ideFile"></span><button type="button" id="ideRun">Run</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="tpl">
+      <h3>Starter templates, one per module</h3>
+      <div class="tpl-grid" id="tplGrid"></div>
+    </div>
+    <p class="disc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>This is an overview. Details of this section are covered in depth during the program.</span></p>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="book">
+  <div class="wrap book">
+    <div class="cover" aria-hidden="true">
+      <div class="k">Amazon Bedrock</div>
+      <div class="ti">A Practical Guide to Generative AI Using Amazon Bedrock</div>
+      <div class="ln"></div>
+      <div class="au">Avik Bhattacharjee</div>
+    </div>
+    <div>
+      <span class="free">Free with every enrolment</span>
+      <h3>A Practical Guide to Generative AI Using Amazon Bedrock</h3>
+      <p class="by">Building, Deploying, and Securing Generative AI Applications. By Avik Bhattacharjee, Apress.</p>
+      <p class="lede" style="font-size:16.5px">A step-by-step companion for Module 10 and your cloud capstone. It covers how to build, deploy and secure generative AI applications on Amazon Bedrock.</p>
+      <ul>
+        <li>Prompt engineering, retrieval-augmented generation and model evaluation on Bedrock</li>
+        <li>Setup, life cycle management and integration with Amazon SageMaker</li>
+        <li>Security, governance and responsible AI for real-world applications</li>
+      </ul>
+      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn ghost small" href="https://www.amazon.in/Practical-Mastering-Generative-Applications-Bedrock/dp/B0DWJCH971" target="_blank" rel="noopener">View the book on Amazon</a>
+        <a class="btn small" href="#enroll">Enrol and get the book free</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPSTONE -->
+<section id="capstone">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Enterprise FDE Transformation Capstone</h2>
+      <p class="lede">The ultimate portfolio project. Choose one industry track and take it through every layer of the program to a production release.</p>
+    </div>
+    <div class="tracks" id="tracks"></div>
+
+    <div class="cap-grid">
+      <div>
+        <h3>Final capstone architecture</h3>
+        <p class="lede" style="font-size:16px;margin-top:8px">From business problem to production release, with a six-pillar review before anything ships.</p>
+        <div class="arch" id="arch" style="margin-top:26px"></div>
+      </div>
+      <div>
+        <h3>Final capstone deliverables</h3>
+        <p class="lede" style="font-size:16px;margin-top:8px">Every learner must produce all twenty.</p>
+        <ol class="deliv" id="deliv" style="margin-top:20px"></ol>
+      </div>
+    </div>
+    <p class="disc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>This is an overview. Details of this section are covered in depth during the program.</span></p>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section id="readiness">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The production-readiness gate</h2>
+      <p class="lede">Every project must pass a Production Readiness Review against the FDE Production Readiness Scorecard. This is what makes the training genuinely production-oriented, not just production in name.</p>
+    </div>
+    <div class="score" id="score"></div>
+  </div>
+</section>
+
+<!-- ARTIFACTS -->
+<section id="artifacts">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>No module without a production artifact</h2>
+      <p class="lede">It is a formal rule of the program. Every module produces something you can put in your portfolio.</p>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="artTbl"></table></div>
+  </div>
+</section>
+
+<!-- KEYWORDS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Skills and roles you will be ready for</h2>
+      <p class="lede">The curriculum covers the terms employers actually search for, because you will have built with each of them.</p>
+    </div>
+    <div class="kw" id="kw"></div>
+    <p class="disc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>This is an overview. Details of this section are covered in depth during the program.</span></p>
+  </div>
+</section>
+
+<!-- MENTORS -->
+<section id="mentors">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Mentors &amp; Advisory</h2>
+      <p class="lede">Our mentors and advisors average 20+ years across corporate, domain and AI/ML roles, from hyperscaler engineering to academic leadership.</p>
+    </div>
+    <div class="mentors" id="mentorGrid"></div>
+    <div class="mstat reveal"><span><b>20+ years</b> average across corporate, domain and AI/ML</span><span><b>Ex-AWS</b></span><span><b>IIT (BHU)</b> Faculty Chair</span><span><b>IIM Bangalore</b> alumnus</span></div>
+  </div>
+</section>
+
+<!-- BATCHES -->
+<section id="batches">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Choose your batch</h2>
+      <p class="lede">Batch 12 (weekday) starts Mon 11 January 2027 and Batch 11 (weekend) starts Sat 16 January 2027. Both cover the same 100 hours in 25 live sessions of 4 hours each, with no class on 26 January (Republic Day). Select a batch to see its date-wise plan and day-wise agenda.</p>
+    </div>
+    <div class="batches">
+      <button class="batch" type="button" data-batch="weekend" aria-pressed="true" aria-controls="plan">
+        <div class="top"><div><div class="bn">Batch 11</div><h3>Weekend Classes</h3></div><span class="sel">Selected</span></div>
+        <dl><dt>Days</dt><dd>Saturday &amp; Sunday (IST)</dd><dt>Time</dt><dd class="tz">9:00 AM – 1:00 PM IST<small>10:30 PM – 2:30 AM EST, Fri &amp; Sat nights</small></dd><dt>Starts</dt><dd id="wkStart"></dd><dt>Ends</dt><dd id="wkEnd"></dd></dl>
+        <div class="seats"><div class="row"><span>Only a few seats left</span><b><span id="seatsWeekend">-</span> of 50 available</b></div><div class="track2"><i id="barWeekend"></i></div></div>
+        <div class="hint">View date-wise plan</div>
+      </button>
+      <button class="batch" type="button" data-batch="weekday" aria-pressed="false" aria-controls="plan">
+        <div class="top"><div><div class="bn">Batch 12</div><h3>Weekday Classes</h3></div><span class="sel">Select</span></div>
+        <dl><dt>Days</dt><dd>Monday – Friday</dd><dt>Time</dt><dd class="tz">8:00 PM – 12:00 AM IST<small>9:30 AM – 1:30 PM EST, same day</small></dd><dt>Starts</dt><dd id="wdStart"></dd><dt>Ends</dt><dd id="wdEnd"></dd></dl>
+        <div class="seats"><div class="row"><span>Only a few seats left</span><b><span id="seatsWeekday">-</span> of 50 available</b></div><div class="track2"><i id="barWeekday"></i></div></div>
+        <div class="hint">View date-wise plan</div>
+      </button>
+    </div>
+
+    <div class="plan" id="plan" aria-live="polite">
+      <div class="plan-head">
+        <div><h3 id="planTitle"></h3><p id="planSub"></p></div>
+        <div class="tabs" role="tablist">
+          <button role="tab" aria-selected="true" data-view="high" type="button">Date-wise plan</button>
+          <button role="tab" aria-selected="false" data-view="day" type="button">Day-wise agenda</button>
+        </div>
+      </div>
+      <div class="plan-body" id="planBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section id="fees">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Course fees</h2>
+      <p class="lede">One fee covers all 100 hours, 10+ projects, the module capstones, the enterprise capstone, the six-pillar review, six months of post-program support, starter templates and sandbox from Day 1, and a free copy of <em>A Practical Guide to Generative AI Using Amazon Bedrock</em>.</p>
+    </div>
+    <div class="fees" id="feeGrid"></div>
+    <p class="feenote">INR fees are shown <b>+ 18% GST</b>. USD fees for international learners carry no GST. Discounts are calculated on the standard fee.</p>
+
+    <div class="guar">
+      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><path d="M32 5l22 8v16c0 15-10 25-22 30C20 54 10 44 10 29V13z"/><path d="M22 32l7 7 14-15"/></svg>
+      <div>
+        <h3>Top 5% get a 3-month internship. Otherwise, money back.</h3>
+        <p>The best-performing 5% of learners earn a 3-month internship opportunity. If you don't, you get your money back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLL -->
+<section id="enroll">
+  <div class="wrap enroll">
+    <div>
+      <h2>Reserve your seat</h2>
+      <p class="lede">Enrolment takes about two minutes on a short Google Form. Seats are limited to 50 per batch and only a few remain.</p>
+      <h3 style="margin-top:32px;font-size:19px;font-family:var(--sans);font-weight:700">The form will ask for</h3>
+      <ol class="form-fields">
+        <li>Name</li><li>Email address</li><li>Phone number</li><li>Option of the batch (Batch 11 Weekend or Batch 12 Weekdays)</li><li>Timing (IST or EST)</li><li>Preferred payment mode</li>
+      </ol>
+    </div>
+    <div class="enroll-box" id="enrollBox"></div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section class="position">
+  <div class="wrap">
+    <h2>FDE 100X™: Enterprise AI Engineering &amp; Production Systems</h2>
+    <p style="color:#fff;font-weight:600">Domain-led AI transformation, engineered for production.</p>
+    <p>A 100-hour production-first program for engineers and technology professionals who want to build, deploy, evaluate, secure, monitor and operate enterprise AI systems.</p>
+    <p>Learn and build across LLMs, SLMs, RAG, Enterprise Search, AI Agents, MCP, LLMOps, AgentOps, AI Evaluation, DevSecOps, AI Security, AWS, GCP and Enterprise AI Architecture.</p>
+    <p class="fin">10+ production-oriented projects. Module-wise capstones. One enterprise transformation capstone. Six-pillar architecture review. Six months of post-program support. Starter templates and sandbox from Day 1. A free Amazon Bedrock book.</p>
+    <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="#enroll" style="background:#fff;color:var(--ink);border-color:#fff">Reserve a seat</a>
+      <a class="btn ghost" href="#batches" style="color:#fff;border-color:#5A6A84">See batch dates</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOGS & WHITEPAPERS (edit the BLOGS list in the script) -->
+<section id="insights">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Insights: Blogs &amp; Whitepapers</h2>
+      <p class="lede">Practical writing on taking enterprise AI to production, published on Medium by the FDEAgentic100x™ team.</p>
+    </div>
+    <div class="blogs" id="blogGrid"></div>
+    <p class="blogs-foot" id="blogFoot"></p>
+  </div>
+</section>
+
+<!-- FEEDBACK
+     Sample reviews for layout. Replace with real, verified learner feedback in the
+     FEEDBACK array in the script below, then set SHOW_SAMPLE_NOTE = false. -->
+<section id="feedback">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What learners say about FDE 100X™</h2>
+      <div class="fbsum"><span class="big" id="fbAvg">4.8</span><span class="lede" style="font-size:16px;margin:0">average rating out of 5</span></div>
+      <p class="samplenote" id="sampleNote"></p>
+    </div>
+    <div class="fbgrid" id="fbGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>FDE 100X™ | Enterprise AI Engineering &amp; Production Systems | <a href="index.html">FDEAgentic100x™</a></span>
+    <span>Class dates are indicative and any change will be shared with enrolled learners.</span>
+  </div>
+</footer>
+
+<aside class="psum" id="psum" aria-label="Your batch summary">
+  <div class="top"><small>YOUR SELECTION</small><button class="x" type="button" id="psumX" aria-label="Close summary">×</button></div>
+  <div class="sw" role="group" aria-label="Choose batch"><button type="button" data-b="weekend">Batch 11 (Weekend)</button><button type="button" data-b="weekday">Batch 12 (Weekday)</button></div>
+  <div class="t" id="psumT"></div>
+  <div class="pr" id="psumP"></div>
+  <div class="eb" id="psumE"></div>
+  <div class="seats" id="psumS"></div>
+  <a class="btn" id="psumBtn" target="_blank" rel="noopener">Reserve</a>
+</aside>
+
+<!-- WELCOME POP-UP (shows on every page load; edit POPUP in the script) -->
+<div class="wpop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popTitle" aria-hidden="true">
+  <div class="box">
+    <button class="x" type="button" id="popX" aria-label="Close">×</button>
+    <span class="eb"><i></i>FDE 100X™ | NEW BATCHES JANUARY 2027</span>
+    <div class="pstage" id="popStage"></div>
+    <div class="bars" id="popBars"></div>
+    <div class="ctas">
+      <a class="btn b1" id="popMc" target="_blank" rel="noopener">Reserve free masterclass seat</a>
+      <a class="btn b2" href="#batches" id="popBatches">See batches &amp; fees</a>
+    </div>
+    <p class="skip"><button type="button" id="popSkip">Continue to the page</button></p>
+  </div>
+</div>
+
+<div class="mcta" aria-hidden="false">
+  <div><b id="mPrice">₹35,999 + GST</b><br><span id="mNote">Early Bird, $495</span></div>
+  <a class="btn small" href="#enroll">Reserve a seat</a>
+</div>
+
+<script>
+/* ------------------------------ DATA ------------------------------ */
+const STAGES = [
+  ["Discover","business problem & KPIs"],["Design","architecture"],["Build","RAG, agents, MCP"],["Evaluate","quality gates"],["Secure","guardrails & IAM"],
+  ["Deploy","AWS / GCP"],["Observe","traces & metrics"],["Operate","LLMOps, AgentOps"],["Optimize","cost & latency"],["Transform","business outcome"]
+];
+const STEP_DESC = {
+  Discover:"Find the business problem worth solving.",Design:"Architect the AI system and its trade-offs.",Build:"Implement a working solution.",
+  Evaluate:"Prove quality with datasets and gates.",Secure:"Protect data, identity, tools and models.",Deploy:"Ship to cloud-native infrastructure.",
+  Observe:"See latency, cost, quality and failures.",Operate:"Run it with LLMOps and AgentOps.",Optimize:"Tune cost, latency and quality.",Transform:"Deliver a measurable enterprise outcome."
+};
+const STACK = ["LLM","SLM","RAG","Enterprise Search","AI Agents","MCP","Multi-Agent Foundations","LLMOps","AgentOps","DevSecOps","Cloud","AI Evaluation","Enterprise Architecture","Domain Transformation"];
+const OLD = ["Theory","Tutorials","Small Projects","Certificate"];
+const NEW = ["Business Problem","Architecture","Build","Test","Evaluate","Secure","Deploy","Observe","Operate","Optimize"];
+
+const PILLARS = [
+  ["Operational Excellence","LLMOps, AgentOps, monitoring, incident management",'<circle cx="20" cy="20" r="6"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6M8.7 8.7l4.2 4.2M27.1 27.1l4.2 4.2M8.7 31.3l4.2-4.2M27.1 12.9l4.2-4.2"/>'],
+  ["Security","IAM, AI security, prompt injection, data protection",'<path d="M20 4l13 5v10c0 9-6 15-13 18C13 34 7 28 7 19V9z"/><rect x="15" y="17" width="10" height="8" rx="1.5"/><path d="M17 17v-3a3 3 0 016 0v3"/>'],
+  ["Reliability","HA, fault tolerance, retries, graceful degradation",'<path d="M6 20a14 14 0 0124-9.9M34 20a14 14 0 01-24 9.9"/><path d="M30 4v6h-6M10 36v-6h6"/>'],
+  ["Performance","Latency, throughput, caching, inference optimization",'<path d="M6 28a14 14 0 1128 0"/><path d="M20 28l7-9"/><circle cx="20" cy="28" r="2"/>'],
+  ["Cost","Token economics, model selection, infrastructure TCO",'<circle cx="20" cy="20" r="14"/><path d="M24.5 14.5c-1-1.3-2.7-2-4.5-2-2.5 0-4.5 1.4-4.5 3.5 0 5 9 2.5 9 7.5 0 2.1-2 3.5-4.5 3.5-1.9 0-3.6-.8-4.6-2.2M20 10v3M20 27v3"/>'],
+  ["Sustainability","Efficient models, compute utilization, architecture efficiency",'<path d="M32 6C16 6 8 14 8 26c0 3 1 6 1 6s3-9 13-13c-8 5-10 11-10 11 14 2 20-10 20-24z"/>']
+];
+
+const MODULES = [
+ {n:1,t:"FDE Mindset, AI Product Engineering & Transformation",h:6,art:"AI Product Blueprint",
+  obj:"Understand how an FDE converts a business problem into a production AI product.",
+  secs:[
+   {h:"1.1 The Forward Deployed Engineer",i:["What is an FDE?","AI FDE vs AI Engineer","FDE vs ML Engineer","FDE vs Data Scientist","FDE vs Solutions Architect","FDE vs AI Consultant","FDE vs Software Engineer","FDE career landscape"]},
+   {h:"1.2 Enterprise AI Product Lifecycle",i:["AI product discovery","Business problem identification","AI opportunity assessment","Feasibility","Data readiness","Model readiness","Production readiness"]},
+   {h:"1.3 From POC to Production",flow:["Prototype","Proof of concept","MVP","Production","Scale","Modernization"]},
+   {h:"1.4 FDE Transformation Methodology",flow:["Discover","Design","Build","Evaluate","Secure","Deploy","Observe","Operate","Optimize"]},
+   {h:"1.5 AI Product Requirements",i:["Functional requirements","Non-functional requirements","SLAs","SLOs","Latency","Availability","Security","Scalability","Cost"],wide:true}
+  ],
+  cap:{t:"AI Product Discovery & Transformation Blueprint",d:"You receive an enterprise problem and produce:",l:["Business problem","User personas","AI opportunity","Architecture hypothesis","Data requirements","Model requirements","KPI","Production requirements","Transformation roadmap"]}},
+ {n:2,t:"LLM & SLM Engineering Foundations",h:8,art:"Model Selection Framework",
+  secs:[
+   {h:"2.1 AI → ML → Deep Learning → Generative AI",flow:["AI","ML","Deep Learning","Generative AI"]},
+   {h:"2.2 Transformer Architecture",i:["Tokenization","Embeddings","Attention","Self-attention","Multi-head attention","Positional encoding","Transformer blocks"]},
+   {h:"2.3 LLM Architecture",i:["Decoder-only models","Encoder-decoder models","Autoregressive generation","Context windows","KV cache"]},
+   {h:"2.4 LLM vs SLM",i:["Capability","Latency","Cost","Privacy","Deployment","Specialization","Inference requirements"]},
+   {h:"2.5 LLM Inference",i:["Temperature","Top-p","Top-k","Max tokens","Batching","Streaming"]},
+   {h:"2.6 Model Selection",i:["Proprietary models","Open-weight models","Hosted models","Self-hosted models","Model routing"]},
+   {h:"2.7 Enterprise Model Selection",i:["Quality","Latency","Throughput","Context window","Cost/token","Security","Compliance"],wide:true}
+  ],
+  cap:{t:"Enterprise LLM/SLM Selection Engine",d:"Create a model-selection framework and recommend the appropriate model for a real enterprise workload."}},
+ {n:3,t:"Enterprise LLM Application Engineering",h:8,art:"Enterprise AI Assistant",
+  secs:[
+   {h:"3.1 LLM Application Architecture",i:["Application layer","Model layer","Data layer","Tool layer","Safety layer","Evaluation layer"]},
+   {h:"3.2 LLM APIs",i:["API integration","Streaming","Structured outputs","JSON responses","Retries","Error handling"]},
+   {h:"3.3 Prompt Engineering",i:["System prompts","Few-shot prompting","Structured prompting","Prompt templates","Prompt chaining","Context engineering"]},
+   {h:"3.4 Function Calling",i:["Tool schemas","Function invocation","Validation","Error handling"]},
+   {h:"3.5 AI Application Frameworks",i:["LangChain","LangGraph","LlamaIndex","Native SDKs"]},
+   {h:"3.6 AI Application Testing",i:["Unit testing","Integration testing","Prompt testing","Regression testing"]}
+  ],
+  cap:{t:"Enterprise AI Assistant",d:"Build an enterprise assistant with:",flow:["LLM","Structured output","Tools","Error handling","Telemetry","Evaluation hooks"],plus:true}},
+ {n:4,t:"RAG, Enterprise Search & Knowledge Engineering",h:12,art:"Production RAG System",flag:"Signature module",
+  obj:"This is one of the signature FDE modules.",
+  secs:[
+   {h:"4.1 Enterprise Knowledge Architecture",i:["Structured data","Unstructured data","Documents","APIs","Databases","Enterprise knowledge graphs"]},
+   {h:"4.2 Data Ingestion",i:["PDF","Word","HTML","CSV","Email","Databases","APIs"]},
+   {h:"4.3 Document Processing",i:["Parsing","Cleaning","Metadata","Document hierarchy","Enrichment"]},
+   {h:"4.4 Chunking Strategies",i:["Fixed-size","Recursive","Semantic","Hierarchical","Parent-child"]},
+   {h:"4.5 Embeddings",i:["Embedding models","Vector representations","Similarity","Cosine similarity"]},
+   {h:"4.6 Vector Search",i:["FAISS","pgvector","OpenSearch","Managed vector databases"]},
+   {h:"4.7 Enterprise Search",i:["Keyword search","Semantic search","Vector search","Hybrid search","Metadata filtering"]},
+   {h:"4.8 Reranking",i:["Cross-encoder","Relevance scoring","Reranking pipelines"]},
+   {h:"4.9 RAG Architecture",flow:["Query","Retrieval","Reranking","Context","LLM","Response"]},
+   {h:"4.10 Advanced RAG",i:["Query rewriting","Multi-query RAG","HyDE","Contextual retrieval","Parent-child retrieval","Agentic RAG"]},
+   {h:"4.11 RAG Failure Modes",i:["Retrieval failure","Poor chunking","Irrelevant context","Hallucination","Lost-in-the-middle","Stale knowledge"]},
+   {h:"4.12 RAG Evaluation",i:["Retrieval relevance","Precision","Recall","NDCG","Groundedness","Answer relevance","Faithfulness"]},
+   {h:"Production transformation",note:"Every student must answer: \u201cWhy will this RAG system work reliably in production?\u201d",wide:true}
+  ],
+  cap:{t:"Enterprise Knowledge Copilot",d:"Example: Insurance Policy Knowledge Copilot. Architecture:",flow:["Documents","Ingestion","Chunking","Embeddings","Hybrid Search","Reranking","RAG","Evaluation","Observability"]}},
+ {n:5,t:"AI Agents, Tool Calling & MCP",h:12,art:"Agent + MCP System",flag:"Flagship module",
+  obj:"This is a major flagship module. MCP is taught as an enterprise integration protocol for AI applications, not simply as another agent framework. The official MCP specification defines core primitives including Prompts, Resources and Tools, and the current 2026 specification adds significant enterprise and scalability capabilities.",
+  secs:[
+   {h:"5.1 AI Agent Foundations",i:["AI application vs workflow vs agent","Agent architecture","Agent autonomy","Agent state","Agent memory","Planning","Tool use"]},
+   {h:"5.2 Agent Architecture",i:["Model","Instructions","Tools","Memory","State","Environment","Policies"]},
+   {h:"5.3 Tool Calling",i:["Function calling","Tool schemas","Tool selection","Tool execution","Tool errors","Authorization"]},
+   {h:"5.4 Agent Patterns",i:["ReAct","Routing","Planner/executor","Reflection","Evaluator/optimizer","Human-in-the-loop"]},
+   {h:"5.5 Model Context Protocol (MCP)",wide:true,groups:[
+     {g:"MCP fundamentals",i:["What is MCP?","Why MCP?","MCP architecture","MCP Host","MCP Client","MCP Server"],note:"Anthropic describes MCP as an open protocol for standardizing how applications provide context to LLMs, and compares it to a \u201cUSB-C\u201d interface between AI applications and tools/data."},
+     {g:"MCP primitives",i:["Resources","Tools","Prompts"],note:"The MCP specification identifies these as core server primitives, with tools enabling models to execute functions or retrieve information."},
+     {g:"Build MCP servers",i:["Python SDK","TypeScript SDK","Tool definitions","Resource definitions","Prompts","Schemas"]},
+     {g:"MCP clients",i:["Connect clients","Discover tools","Invoke tools","Consume resources"]},
+     {g:"MCP transports",i:["Local MCP","Remote MCP","HTTP-based deployment"]},
+     {g:"MCP security",i:["Authentication","Authorization","Identity","Permissions","Tool-level security","Data access","Auditability"]},
+     {g:"MCP production engineering",i:["Stateless architecture","Horizontal scaling","Load balancing","Caching","Routing","Observability","Authorization"],note:"The July 2026 MCP specification introduced a stateless protocol core, cacheable list results, header-based routing and stronger authorization, which makes these production topics particularly relevant for an FDE."},
+     {g:"MCP Extensions",i:["Extensions architecture","Tasks","MCP Apps","Enterprise authorization"],note:"MCP Apps are now an official MCP extension enabling tools to return interactive UI experiences such as dashboards, forms and visualizations."}
+   ]},
+   {h:"5.6 Enterprise MCP Architecture",wide:true,diagram:"mcp",note:"Students build this architecture:"}
+  ],
+  cap:{t:"MCP-Powered Enterprise Agent",d:"Example: Insurance Claims Agent. Using MCP tools and resources, the agent can:",l:["Retrieve customer information","Retrieve policy","Search claims","Calculate eligibility","Call claims APIs","Generate claim summary","Request human approval"]}},
+ {n:6,t:"Enterprise AI Architecture & Six-Pillar Design",h:8,art:"Production Architecture",
+  obj:"This is where the six architecture pillars are explicitly institutionalized.",
+  secs:[
+   {h:"6.1 Enterprise AI Reference Architecture",i:["Reference architecture for enterprise AI"]},
+   {h:"6.2 AI System Design",i:["Application architecture","Data architecture","Model architecture","Inference architecture","Agent architecture"]},
+   {h:"6.3 Distributed AI Systems",i:["APIs","Queues","Event-driven architecture","Asynchronous processing","Caching","Databases"]},
+   {h:"6.4 Production Architecture",i:["Scalability","High availability","Disaster recovery","Resiliency","Fault tolerance"]},
+   {h:"6.5 The FDE Six-Pillar Architecture Framework™",wide:true,groups:[
+     {g:"Pillar 1: Operational Excellence",i:["Observability","Monitoring","Incident management","Deployment automation","Continuous improvement"]},
+     {g:"Pillar 2: Security",i:["IAM","Data security","Secrets","Encryption","AI security","Agent permissions"]},
+     {g:"Pillar 3: Reliability",i:["Redundancy","Retries","Failover","Graceful degradation","Fault isolation","Disaster recovery"]},
+     {g:"Pillar 4: Performance Efficiency",i:["Latency","Throughput","Caching","Model selection","Inference optimization","GPU utilization"]},
+     {g:"Pillar 5: Cost Optimization",i:["Token economics","Model routing","Caching","Compute optimization","Storage","Network","TCO"]},
+     {g:"Pillar 6: Sustainability",i:["Efficient models","Compute utilization","Right-sizing","Energy-aware architecture","Efficient inference"]}
+   ]},
+   {h:"6.6 Architecture Trade-offs",wide:true,note:"Students must learn to answer: \u201cWhat are you optimizing for?\u201d Production architecture is about trade-offs, not simply following a checklist. AWS explicitly notes that architecture decisions require trade-offs between the pillars based on business context."}
+  ],
+  cap:{t:"Production Architecture Review",d:"Given a flawed AI architecture, you must:",l:["Identify architectural weaknesses","Redesign the solution","Apply all six pillars","Estimate cost","Define SLA/SLO","Define security controls","Define scalability strategy","Explain architecture trade-offs"]}},
+ {n:7,t:"AI Evaluation & Quality Engineering",h:8,art:"AI Evaluation Framework",
+  secs:[
+   {h:"7.1 Why AI Requires a New Testing Model",i:["Non-deterministic outputs","New testing model"]},
+   {h:"7.2 Evaluation Dataset Engineering",i:["Golden datasets","Production datasets","Synthetic datasets","Adversarial datasets"]},
+   {h:"7.3 LLM Evaluation",i:["Correctness","Relevance","Groundedness","Faithfulness","Completeness","Toxicity","Safety"]},
+   {h:"7.4 RAG Evaluation",i:["Retrieval quality","Context relevance","Groundedness","Answer quality"]},
+   {h:"7.5 Agent Evaluation",i:["Task completion","Tool selection","Tool-call accuracy","Tool output utilization","Instruction adherence"]},
+   {h:"7.6 – 7.9 Judges, humans and pipelines",i:["7.6 LLM-as-a-Judge","7.7 Human Evaluation","7.8 Regression Evaluation","7.9 Evaluation Pipeline"]}
+  ],
+  cap:{t:"AI Quality & Evaluation Platform",d:"Build:",flow:["Dataset","Evaluation","Scoring","Threshold","Regression","Release Gate"]}},
+ {n:8,t:"LLMOps, AgentOps & AI Observability",h:10,art:"LLMOps/AgentOps Platform",
+  secs:[
+   {h:"8.1 LLMOps",i:["Model lifecycle","Prompt lifecycle","Dataset lifecycle","Evaluation lifecycle"]},
+   {h:"8.2 Model Operations",i:["Model registry","Versioning","Deployment","Rollback"]},
+   {h:"8.3 PromptOps",i:["Prompt versioning","Prompt testing","Prompt experimentation"]},
+   {h:"8.4 AgentOps",i:["Agent lifecycle","Agent deployment","Agent monitoring","Agent traces","Tool monitoring","Agent incidents"]},
+   {h:"8.5 AI Observability",i:["Logs","Metrics","Traces","Distributed tracing"]},
+   {h:"8.6 LLM Metrics",i:["TTFT","Latency","Tokens/sec","Throughput","Token usage","Cost/request"]},
+   {h:"8.7 RAG Observability",i:["Retrieval latency","Retrieval quality","Context quality"]},
+   {h:"8.8 Agent Observability",i:["Tool selection","Tool failures","Task completion","Agent trajectory"]},
+   {h:"8.9 Production Monitoring",i:["Drift","Quality degradation","Latency degradation","Cost spikes"]},
+   {h:"8.10 AI Incident Management",i:["Detection","Triage","Response","Post-incident review"]}
+  ],
+  cap:{t:"Production LLMOps & AgentOps Platform",d:"Monitor:",flow:["LLM","RAG","Agent","MCP","Cost","Quality","Latency","Security"],plus:true}},
+ {n:9,t:"AI Security, DevSecOps & Responsible AI",h:8,art:"Secure AI Deployment",
+  secs:[
+   {h:"9.1 – 9.4 Security foundations",i:["9.1 AI Security Architecture","9.2 Identity & Access Management","9.3 Data Security","9.4 Secrets Management"]},
+   {h:"9.5 – 9.8 AI attack surface",i:["9.5 Prompt Injection","9.6 Jailbreaking","9.7 Data Leakage","9.8 Agent Security"]},
+   {h:"9.9 MCP Security",i:["Tool authorization","Server trust","Access controls","Identity","Audit"]},
+   {h:"9.10 – 9.14 DevSecOps",i:["9.10 Secure AI Supply Chain","9.11 Docker & Container Security","9.12 CI/CD","9.13 Infrastructure as Code","9.14 Security Testing"]},
+   {h:"9.15 Responsible AI",i:["Transparency","Explainability","Fairness","Safety","Human oversight"],wide:true}
+  ],
+  cap:{t:"Secure Production AI Deployment",d:"Take an existing RAG/Agent/MCP application and productionize it with:",flow:["IAM","Secrets","Security Controls","CI/CD","Guardrails","Audit","Monitoring"],plus:true}},
+ {n:10,t:"Cloud-Native AI Engineering: AWS & GCP",h:8,art:"Cloud AI Deployment",
+  secs:[
+   {h:"AWS",i:["Amazon Bedrock","Amazon S3","IAM","Lambda","API Gateway","ECS/EKS","OpenSearch","CloudWatch","Secrets Manager","VPC","SageMaker overview"]},
+   {h:"GCP",i:["Vertex AI","Cloud Run","GKE","Cloud Storage","BigQuery","Vertex AI Search/RAG","IAM","Cloud Monitoring","Secret Manager"]},
+   {h:"Cloud AI Architecture",i:["Serverless AI","Containerized AI","Managed AI","Self-hosted AI","Hybrid AI"]},
+   {h:"Multi-cloud",i:["AWS vs GCP","Architecture mapping","Portability","Vendor lock-in","Cost","Security"]}
+  ],
+  cap:{t:"Cloud-Native Enterprise AI",d:"Build and deploy an AI workload on AWS and create the equivalent GCP architecture."}},
+ {n:11,t:"Domain AI Transformation",h:4,art:"Domain Transformation Blueprint",
+  obj:"This module teaches domain transformation methodology, not deep domain theory.",
+  secs:[
+   {h:"11.1 BFS",i:["Fraud","AML","Credit","Customer service","Collections","Underwriting"]},
+   {h:"11.2 Insurance",i:["Claims","Underwriting","Policy servicing","Fraud","Customer service"]},
+   {h:"11.3 Healthcare",i:["Clinical documentation","Healthcare knowledge","Patient engagement","Claims"]},
+   {h:"11.4 Retail",i:["Customer experience","Personalization","Merchandising","Supply chain"]},
+   {h:"11.5 Manufacturing",i:["Predictive maintenance","Quality","Supply chain","Engineering knowledge"]},
+   {h:"11.6 Domain AI Use-Case Framework",flow:["Business Problem","Data","AI","Architecture","KPI","Risk","ROI","Production"]}
+  ],
+  cap:{t:"Domain AI Transformation Blueprint",d:"Select one industry and create an enterprise AI transformation roadmap."}},
+ {n:12,t:"Enterprise FDE Transformation Capstone",h:8,art:"Enterprise AI Transformation Platform",flag:"Portfolio project",
+  obj:"This is the ultimate portfolio project. Choose an industry track, build end to end and pass the Production Readiness Review.",
+  secs:[
+   {h:"Choose your track",i:["BFS: Fraud & AML Investigation Copilot","Insurance: Claims Intelligence & Agentic Claims Assistant","Healthcare: Healthcare Knowledge & Documentation Copilot","Retail: Customer Service & Product Intelligence Agent","Manufacturing: Engineering Knowledge & Maintenance Copilot"],wide:true},
+   {h:"Final capstone architecture",wide:true,flow:["Business Problem","AI Product Discovery","Enterprise Architecture","RAG + Agent + MCP","LLM/SLM","Evaluation Layer","Security / Guardrails","Cloud-Native Deployment","LLMOps + AgentOps","Observability","Six-Pillar Review","Production Release"]},
+   {h:"Deliverables and readiness gate",wide:true,note:"All 20 capstone deliverables and all 20 gates of the FDE Production Readiness Scorecard. See the capstone and readiness sections below."}
+  ],
+  agenda:["Track selection, business problem & AI product discovery","Enterprise, data & agent architecture: RAG, Agent and MCP","Build, evaluation framework & security architecture","Cloud deployment, DevSecOps pipeline, LLMOps/AgentOps & observability dashboard","Cost/TCO estimate, six-pillar review & production-readiness checklist","Executive presentation & GitHub portfolio"]}
+];
+
+const TRACKS = [
+ ["BFS","Fraud & AML Investigation Copilot",'<path d="M4 12h24M6 12v12M12 12v12M20 12v12M26 12v12M3 27h26M16 4l12 6H4z"/>'],
+ ["Insurance","Claims Intelligence & Agentic Claims Assistant",'<path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><path d="M11 15l4 4 7-7"/>'],
+ ["Healthcare","Healthcare Knowledge & Documentation Copilot",'<path d="M12 4h8v8h8v8h-8v8h-8v-8H4v-8h8z"/>'],
+ ["Retail","Customer Service & Product Intelligence Agent",'<path d="M4 5h4l3 15h15l3-10H10"/><circle cx="13" cy="26" r="2"/><circle cx="24" cy="26" r="2"/>'],
+ ["Manufacturing","Engineering Knowledge & Maintenance Copilot",'<circle cx="16" cy="16" r="4"/><path d="M16 3v5M16 24v5M3 16h5M24 16h5M6.8 6.8l3.5 3.5M21.7 21.7l3.5 3.5M6.8 25.2l3.5-3.5M21.7 10.3l3.5-3.5"/>']
+];
+const ARCH = ["BUSINESS PROBLEM","AI PRODUCT DISCOVERY","ENTERPRISE ARCHITECTURE",["RAG","AGENT","MCP"],"LLM / SLM","EVALUATION LAYER","SECURITY / GUARDRAILS","CLOUD-NATIVE DEPLOYMENT","LLMOps + AgentOps","OBSERVABILITY","SIX-PILLAR REVIEW","PRODUCTION RELEASE"];
+const DELIV = ["Business problem statement","AI opportunity assessment","Product requirements","System architecture","Data architecture","LLM/SLM selection","RAG/Search architecture","Agent architecture","MCP architecture","Evaluation framework","Security architecture","DevSecOps pipeline","Cloud deployment","LLMOps/AgentOps design","Observability dashboard","Cost/TCO estimate","Six-pillar architecture review","Production-readiness checklist","Executive presentation","GitHub portfolio"];
+const GATES = ["Business value","Architecture","Data","Model","RAG/Search","Agents","MCP","Evaluation","Security","Reliability","Performance","Cost","Observability","LLMOps","AgentOps","DevSecOps","Cloud","Governance","Sustainability","Business KPI"];
+const KW = {
+ "Core AI":["Generative AI","Artificial Intelligence","Machine Learning","Deep Learning","Large Language Models","LLM","Small Language Models","SLM","Foundation Models","Transformer Architecture","GenAI Engineering","AI Engineer","Generative AI Engineer","AI Application Development","LLM Application Development","LLM Engineering","AI Engineering","Full Stack AI","Enterprise AI"],
+ "RAG and search":["Retrieval Augmented Generation","RAG","Advanced RAG","Enterprise RAG","AI Search","Semantic Search","Vector Search","Hybrid Search","Vector Database","Embeddings","Reranking","Knowledge Base","Enterprise Search"],
+ "Agents":["AI Agents","Agentic AI","Agentic Workflows","AI Agent Development","Multi-Agent Systems","Agent Architecture","Tool Calling","Function Calling","Agent Memory","Agent Orchestration","Agent Evaluation"],
+ "MCP":["Model Context Protocol","MCP","MCP Server","MCP Client","MCP Tools","MCP Resources","MCP Prompts","MCP Architecture","MCP Security","MCP Server Development","Remote MCP","Enterprise MCP","MCP Apps"],
+ "Operations":["LLMOps","MLOps","AgentOps","GenAIOps","AI Observability","LLM Evaluation","AI Evaluation","Model Monitoring","AI Monitoring","Model Serving","LLM Inference","vLLM"],
+ "Security":["AI Security","GenAI Security","LLM Security","Prompt Injection","AI Guardrails","Responsible AI","AI Governance","AI GRC","DevSecOps"],
+ "Cloud":["AWS Generative AI","Amazon Bedrock","AWS AI","Google Cloud AI","Vertex AI","Google Cloud Generative AI","Cloud AI Architecture","Cloud-Native AI"],
+ "Career":["Forward Deployed Engineer","FDE","AI FDE","AI Engineer","Generative AI Engineer","LLM Engineer","AI Solutions Architect","AI Architect","AI Consultant"]
+};
+
+const SNIPS = [
+ {tab:"bedrock_hello.py", mod:"M10", code:`<span class="c"># Module 10 starter: first call to Amazon Bedrock</span>
+<span class="k2">import</span> boto3
+
+bedrock = boto3.client(<span class="s">"bedrock-runtime"</span>, region_name=<span class="s">"ap-south-1"</span>)
+
+resp = bedrock.<span class="f">converse</span>(
+    modelId=MODEL_ID,  <span class="c"># set in .env</span>
+    messages=[{<span class="s">"role"</span>: <span class="s">"user"</span>,
+               <span class="s">"content"</span>: [{<span class="s">"text"</span>: <span class="s">"Summarise this claim in 3 lines."</span>}]}],
+    inferenceConfig={<span class="s">"temperature"</span>: 0.2, <span class="s">"maxTokens"</span>: 300},
+)
+<span class="f">print</span>(resp[<span class="s">"output"</span>][<span class="s">"message"</span>][<span class="s">"content"</span>][0][<span class="s">"text"</span>])`,
+  out:"$ python bedrock_hello.py\nClaim #CL-20418: water damage, kitchen, 12 Oct.\nPolicy HP-7731 is active; excess of Rs 5,000 applies.\nRecommended: route to fast-track assessment."},
+ {tab:"claims_mcp_server.py", mod:"M5", code:`<span class="c"># Module 5 starter: an MCP server for the claims agent</span>
+<span class="k2">from</span> mcp.server.fastmcp <span class="k2">import</span> FastMCP
+
+mcp = FastMCP(<span class="s">"claims"</span>)
+
+<span class="f">@mcp.tool()</span>
+<span class="k2">def</span> <span class="f">get_policy</span>(policy_id: str) -> dict:
+    <span class="s">"""Return policy details for a policy id."""</span>
+    <span class="k2">return</span> policies.lookup(policy_id)   <span class="c"># TODO: add authorization</span>
+
+<span class="f">@mcp.resource</span>(<span class="s">"claims://{claim_id}"</span>)
+<span class="k2">def</span> <span class="f">claim</span>(claim_id: str) -> str:
+    <span class="k2">return</span> claims.as_markdown(claim_id)
+
+<span class="k2">if</span> __name__ == <span class="s">"__main__"</span>:
+    mcp.<span class="f">run</span>()`,
+  out:"$ python claims_mcp_server.py\nMCP server 'claims' ready\ntools: get_policy   resources: claims://{claim_id}"},
+ {tab:"rag_pipeline.py", mod:"M4", code:`<span class="c"># Module 4 starter: hybrid retrieval + rerank + answer</span>
+<span class="k2">def</span> <span class="f">answer</span>(question: str) -> Answer:
+    candidates = search.<span class="f">hybrid</span>(question, k=<span class="s">40</span>,
+                               filters={<span class="s">"doc_type"</span>: <span class="s">"policy"</span>})
+    top = reranker.<span class="f">rerank</span>(question, candidates, k=<span class="s">6</span>)
+    prompt = templates.<span class="f">grounded_qa</span>(question, top)
+    reply = llm.<span class="f">generate</span>(prompt)
+    trace.<span class="f">log</span>(question, top, reply)   <span class="c"># observability hook</span>
+    <span class="k2">return</span> Answer(reply, citations=top)`,
+  out:"$ python rag_pipeline.py \"Is flood damage covered?\"\nretrieved 40 -> reranked 6 -> answer with 3 citations (812 ms)"},
+ {tab:"test_release_gate.py", mod:"M7", code:`<span class="c"># Module 7 starter: evaluation as a release gate</span>
+<span class="k2">def</span> <span class="f">test_groundedness_gate</span>():
+    results = evals.<span class="f">run</span>(dataset=<span class="s">"golden/policy_qa.jsonl"</span>)
+    <span class="k2">assert</span> results.groundedness >= <span class="s">0.90</span>
+    <span class="k2">assert</span> results.answer_relevance >= <span class="s">0.85</span>
+    <span class="k2">assert</span> results.p95_latency_ms <= <span class="s">2000</span>`,
+  out:"$ pytest test_release_gate.py\n1 passed: groundedness 0.93, relevance 0.88, p95 1,640 ms. Release gate open."}
+];
+const TPLS = [
+ ["M1","AI product blueprint","m01-product-blueprint"],["M2","Model selection engine","m02-model-selection"],["M3","Enterprise AI assistant","m03-ai-assistant"],["M4","Production RAG system","m04-knowledge-copilot"],
+ ["M5","Agent + MCP servers","m05-claims-agent-mcp"],["M6","Architecture review kit","m06-six-pillar-review"],["M7","Evaluation platform","m07-eval-release-gate"],["M8","LLMOps/AgentOps stack","m08-observability"],
+ ["M9","Secure deployment","m09-devsecops-pipeline"],["M10","AWS + GCP deployment","m10-cloud-native-ai"],["M11","Domain blueprint","m11-domain-roadmap"],["M12","Capstone scaffold","m12-enterprise-capstone"]
+];
+
+/* ------------------------------ HELPERS ------------------------------ */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const flowHTML = (arr, cls="flow") => arr.map((s,i)=>(i?'<span class="j"></span>':'')+`<span class="s">${esc(s)}</span>`).join("");
+function onView(el, fn, th=.3){
+  if(!("IntersectionObserver" in window)){fn();return}
+  const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){fn();io.disconnect()}}),{threshold:th});
+  io.observe(el);
+}
+
+/* ------------------------------ HERO PIPELINE ------------------------------ */
+const stagesEl = $("#stages");
+stagesEl.innerHTML = STAGES.map(([n,d])=>`<li class="stage"><span class="ico"></span><span><span class="nm">${n}</span><span class="ds">${d}</span></span><span class="t"></span></li>`).join("");
+let runTimer;
+function runPipeline(){
+  clearTimeout(runTimer);
+  const rows = $$(".stage"); rows.forEach(r=>{r.className="stage"; r.querySelector(".t").textContent=""});
+  $("#runTop").classList.remove("done"); $("#runState").textContent="running";
+  $("#release").textContent="Production release pending"; $("#release").classList.remove("live");
+  let i=0;
+  const step=()=>{
+    if(i>0){rows[i-1].className="stage ok"; rows[i-1].querySelector(".t").textContent=(1.2+((i*7)%9)/10).toFixed(1)+"s"}
+    if(i<rows.length){rows[i].className="stage active"; i++; runTimer=setTimeout(step, reduce?0:430)}
+    else{$("#runTop").classList.add("done"); $("#runState").textContent="passed"; $("#release").textContent="✓ Production release"; $("#release").classList.add("live")}
+  };
+  step();
+}
+$("#rerun").addEventListener("click", runPipeline);
+runPipeline();
+
+/* ------------------------------ COUNTERS ------------------------------ */
+$$("[data-count]").forEach(el=>onView(el,()=>{
+  const end=+el.dataset.count, t0=performance.now(), dur=reduce?0:1400;
+  const tick=t=>{const p=dur?Math.min(1,(t-t0)/dur):1; el.textContent=Math.round(end*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(tick)};
+  requestAnimationFrame(tick);
+}));
+
+/* ------------------------------ STATIC SECTIONS ------------------------------ */
+$("#stack").innerHTML = STACK.map((s,i)=>(i?'<span class="plus">+</span>':'')+`<span class="chip">${s}</span>`).join("");
+$("#flowOld").innerHTML = flowHTML(OLD);
+$("#flowNew").innerHTML = flowHTML(NEW);
+
+const steps=$("#steps");
+steps.innerHTML = STAGES.map(([n])=>`<li><b>${n}</b><span>${STEP_DESC[n]}</span></li>`).join("");
+onView(steps,()=>$$("#steps li").forEach((li,i)=>setTimeout(()=>li.classList.add("lit"), reduce?0:i*140)));
+
+$("#pillarGrid").innerHTML = PILLARS.map(([t,a,ic])=>`<div class="pillar"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ic}</svg><h3>${t}</h3><p class="app">${a}</p></div>`).join("");
+
+$("#hoursTbl").innerHTML = MODULES.map(m=>`<tr><td class="m">M${m.n}</td><td class="t">${esc(m.t)}</td><td class="b"><div class="bar"><i data-w="${m.h/12*100}"></i></div></td><td class="h">${m.h} hrs</td></tr>`).join("")+`<tr class="total"><td></td><td>Total</td><td class="b"></td><td class="h">100 hrs</td></tr>`;
+onView($("#hoursTbl"),()=>$$("#hoursTbl .bar i").forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+"%", reduce?0:i*60)));
+
+/* ------------------------------ ROADMAP ------------------------------ */
+const mcpSVG = `<svg viewBox="0 0 640 330" role="img" aria-label="Enterprise MCP architecture: AI application to MCP client to three MCP servers for CRM, Search and Database, all over enterprise data" font-family="Instrument Sans, sans-serif" font-size="14">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8A97A8"/></marker></defs>
+<g stroke="#8A97A8" stroke-width="1.6" fill="none" marker-end="url(#ar)">
+<path d="M320 52v22"/><path d="M320 112v18H130v20M320 130v20M320 130h190v20"/><path d="M130 188v22"/><path d="M320 188v22"/><path d="M510 188v22"/>
+<path d="M130 248v18h190v12M510 248v18H320"/><path d="M320 248v30"/></g>
+<rect x="210" y="12" width="220" height="40" rx="8" fill="#0E1A2B"/><text x="320" y="37" text-anchor="middle" fill="#fff" font-weight="600">AI Application</text>
+<rect x="230" y="74" width="180" height="38" rx="8" fill="#2340C8"/><text x="320" y="98" text-anchor="middle" fill="#fff" font-weight="600">MCP Client</text>
+<g fill="#EEF1FC" stroke="#2340C8" stroke-width="1.5"><rect x="60" y="150" width="140" height="38" rx="8"/><rect x="250" y="150" width="140" height="38" rx="8"/><rect x="440" y="150" width="140" height="38" rx="8"/></g>
+<g fill="#2340C8" font-weight="600" text-anchor="middle"><text x="130" y="174">MCP Server</text><text x="320" y="174">MCP Server</text><text x="510" y="174">MCP Server</text></g>
+<g fill="#fff" stroke="#0E1A2B" stroke-width="1.3"><rect x="75" y="210" width="110" height="38" rx="8"/><rect x="265" y="210" width="110" height="38" rx="8"/><rect x="455" y="210" width="110" height="38" rx="8"/></g>
+<g fill="#0E1A2B" font-weight="600" text-anchor="middle"><text x="130" y="234">CRM</text><text x="320" y="234">Search</text><text x="510" y="234">Database</text></g>
+<rect x="200" y="278" width="240" height="40" rx="8" fill="#0E9467"/><text x="320" y="303" text-anchor="middle" fill="#fff" font-weight="600">Enterprise Data</text>
+</svg>`;
+
+function secHTML(s){
+  let h = `<div class="sec${s.wide?' wide':''}"><h4>${esc(s.h)}</h4>`;
+  if(s.i) h += `<ul>${s.i.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+  if(s.flow) h += `<div class="mini-flow">${flowHTML(s.flow)}</div>`;
+  if(s.groups) h += s.groups.map(g=>`<div class="grp">${esc(g.g)}</div><ul>${g.i.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>${g.note?`<p class="snote">${esc(g.note)}</p>`:""}`).join("");
+  if(s.note) h += `<p class="snote">${esc(s.note)}</p>`;
+  if(s.diagram==="mcp") h += `<div class="diagram">${mcpSVG}</div>`;
+  return h+"</div>";
+}
+function capHTML(c){
+  if(!c) return "";
+  let h = `<div class="cap"><div class="k">Module capstone</div><h4>${esc(c.t)}</h4><p>${esc(c.d)}</p>`;
+  if(c.l) h += `<ul>${c.l.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+  if(c.flow) h += `<div class="mini-flow">${c.plus ? c.flow.map((s,i)=>(i?'<span style="margin:0 6px;color:#8A97A8;font-weight:700">+</span>':'')+`<span class="s">${esc(s)}</span>`).join("") : flowHTML(c.flow)}</div>`;
+  return h+"</div>";
+}
+const rm = $("#roadmapList");
+rm.insertAdjacentHTML("beforeend", MODULES.map(m=>`
+<li class="mod" id="m${m.n}">
+  <span class="node">${m.n}</span>
+  <div class="mod-card">
+    <button class="mod-head" type="button" aria-expanded="false" aria-controls="mb${m.n}">
+      <div><h3>Module ${m.n}: ${esc(m.t)}</h3>
+      <div class="meta"><span class="tag">${m.h} hours</span><span class="tag">Artifact: ${esc(m.art)}</span>${m.flag?`<span class="tag flag">${m.flag}</span>`:""}</div></div>
+      <span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l5 5 5-5"/></svg></span>
+    </button>
+    <div class="mod-body" id="mb${m.n}"><div><div class="mod-inner">
+      ${m.obj?`<p class="obj"><b>Module objective.</b> ${esc(m.obj)}</p>`:""}
+      <div class="secs">${m.secs.map(secHTML).join("")}</div>
+      ${capHTML(m.cap)}
+      <div class="artifact"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7.5"/><path d="M5.5 9.2l2.3 2.3 4.7-4.7"/></svg>Portfolio artifact: ${esc(m.art)}</div>
+    </div></div></div>
+  </div>
+</li>`).join(""));
+function setOpen(li, open){ li.classList.toggle("open",open); li.querySelector(".mod-head").setAttribute("aria-expanded",open); if(open) li.classList.add("seen"); }
+$$(".mod-head").forEach(b=>b.addEventListener("click",()=>{const li=b.closest(".mod"); setOpen(li,!li.classList.contains("open"))}));
+$("#expandAll").onclick=()=>$$(".mod").forEach(li=>setOpen(li,true));
+$("#collapseAll").onclick=()=>$$(".mod").forEach(li=>setOpen(li,false));
+setOpen($("#m1"),true);
+function rmProgress(){
+  const r=rm.getBoundingClientRect(), vh=innerHeight;
+  const p=Math.max(0,Math.min(1,(vh*.6-r.top)/r.height));
+  $("#rmProg").style.height=(p*(r.height-20))+"px";
+}
+addEventListener("scroll",rmProgress,{passive:true}); rmProgress();
+
+/* ------------------------------ CAPSTONE ------------------------------ */
+$("#tracks").innerHTML = TRACKS.map(([d,t,ic])=>`<div class="track"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ic}</svg><div class="d">${d}</div><b>${t}</b></div>`).join("");
+$("#arch").innerHTML = ARCH.map((a,i)=>{
+  const box = Array.isArray(a) ? `<div class="tri">${a.map(x=>`<div class="box">${x}</div>`).join("")}</div>` : `<div class="box${i===ARCH.length-1?' final':''}">${a}</div>`;
+  return (i?'<div class="v"></div>':'')+box;
+}).join("");
+onView($("#arch"),()=>{
+  const groups=[...$("#arch").children].filter(c=>!c.classList.contains("v"));
+  groups.forEach((g,i)=>setTimeout(()=>{(g.classList.contains("tri")?[...g.children]:[g]).forEach(b=>b.classList.add("on"))}, reduce?0:i*170));
+},.2);
+$("#deliv").innerHTML = DELIV.map(d=>`<li>${d}</li>`).join("");
+
+$("#score").innerHTML = GATES.map(g=>`<div class="gate"><span class="ck"></span>${g}</div>`).join("");
+onView($("#score"),()=>$$(".gate").forEach((g,i)=>setTimeout(()=>g.classList.add("ok"), reduce?0:i*90)));
+
+$("#artTbl").innerHTML = `<thead><tr><th>Module</th><th>Production artifact</th><th>Hours</th></tr></thead><tbody>`+MODULES.map(m=>`<tr><td>M${m.n}</td><td>${esc(m.art)}</td><td>${m.h}</td></tr>`).join("")+`</tbody>`;
+$("#kw").innerHTML = Object.entries(KW).map(([k,v])=>`<div><h4>${k}</h4><ul>${[...new Set(v)].map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("");
+
+/* ------------------------------ SANDBOX ------------------------------ */
+let snip=0;
+function renderIde(){
+  $("#ideTabs").innerHTML = SNIPS.map((s,i)=>`<button role="tab" type="button" aria-selected="${i===snip}" data-i="${i}">${s.tab}</button>`).join("");
+  $("#ideCode").innerHTML = SNIPS[snip].code;
+  $("#ideFile").textContent = `${SNIPS[snip].mod} starter template`;
+  $("#ideOut").classList.remove("show"); $("#ideOut").textContent="";
+  $$("#ideTabs button").forEach(b=>b.onclick=()=>{snip=+b.dataset.i; renderIde()});
+}
+renderIde();
+$("#ideRun").onclick=()=>{const o=$("#ideOut"); o.textContent=SNIPS[snip].out; o.style.whiteSpace="pre-wrap"; o.classList.add("show")};
+$("#tplGrid").innerHTML = TPLS.map(([m,t,r])=>`<div class="tpl-item"><small>${m}</small>${t}<code>${r}/</code></div>`).join("");
+
+/* ------------------------------ SCHEDULE ------------------------------ */
+const SESSION_H = 4, N_SESS = 25;
+function buildUnits(){
+  const units=[];
+  MODULES.forEach(m=>{
+    let items;
+    if(m.agenda){ items=m.agenda.map(a=>({t:a,w:1})); }
+    else{
+      items=m.secs.filter(s=>!/^Production transformation/.test(s.h)).flatMap(s=>
+        s.groups ? s.groups.map(g=>({t:s.h.split(" ")[0]+" "+g.g, w:1})) : [{t:s.h,w:1}]);
+      const capW = items.length*0.35;
+      items.push({t:"Module capstone: "+m.cap.t, w:capW});
+    }
+    const tw=items.reduce((a,b)=>a+b.w,0);
+    items.forEach(it=>units.push({m:m.n, t:it.t, h:m.h*it.w/tw}));
+  });
+  return units;
+}
+function allocate(){
+  const units=buildUnits(), sess=Array.from({length:N_SESS},()=>({mods:{},topics:[]}));
+  let s=0, left=SESSION_H;
+  units.forEach(u=>{
+    let rem=u.h, first=true;
+    while(rem>1e-6 && s<N_SESS){
+      const take=Math.min(rem,left);
+      sess[s].mods[u.m]=(sess[s].mods[u.m]||0)+take;
+      if(take>0.15||first) sess[s].topics.push({m:u.m,t:u.t,cont:!first});
+      rem-=take; left-=take; first=false;
+      if(left<=1e-6){s++; left=SESSION_H}
+    }
+  });
+  return sess;
+}
+const SESS = allocate();
+/* Batch start dates and holidays: edit here */
+const BATCH_START={ weekday:new Date(2027,0,11), weekend:new Date(2027,0,16) }; /* Mon 11 Jan 2027, Sat 16 Jan 2027 */
+const HOLIDAYS=["2027-01-26"]; /* Republic Day: no class */
+const isoD=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+function datesFor(batch){
+  const out=[], d=new Date(BATCH_START[batch]);
+  const ok = batch==="weekend" ? (x=>x===0||x===6) : (x=>x>=1&&x<=5);
+  while(out.length<N_SESS){ if(ok(d.getDay()) && !HOLIDAYS.includes(isoD(d))) out.push(new Date(d)); d.setDate(d.getDate()+1); }
+  return out;
+}
+const DATES={weekend:datesFor("weekend"), weekday:datesFor("weekday")};
+const fmt=(d,o)=>d.toLocaleDateString("en-IN",o);
+const fDay=d=>fmt(d,{weekday:"short",day:"numeric",month:"short",year:"numeric"});
+const BATCH={
+  weekend:{name:"Batch 11: Weekend Classes",time:"9:00 AM – 1:00 PM IST (10:30 PM – 2:30 AM EST, previous night)",days:"Saturday & Sunday (IST)"},
+  weekday:{name:"Batch 12: Weekday Classes",time:"8:00 PM – 12:00 AM IST (9:30 AM – 1:30 PM EST)",days:"Monday – Friday"}
+};
+$("#wkStart").textContent=fDay(DATES.weekend[0]); $("#wkEnd").textContent=fDay(DATES.weekend[N_SESS-1]);
+$("#wdStart").textContent=fDay(DATES.weekday[0]); $("#wdEnd").textContent=fDay(DATES.weekday[N_SESS-1]);
+
+let cur="weekend", view="high";
+function renderPlan(){
+  const b=BATCH[cur], ds=DATES[cur];
+  $("#planTitle").textContent=b.name;
+  $("#planSub").textContent=`${b.days}, ${b.time}. ${fDay(ds[0])} to ${fDay(ds[N_SESS-1])}. 25 sessions, 100 hours.`;
+  let html="";
+  if(view==="high"){
+    html=`<table class="gantt" aria-label="Date-wise module plan"><tbody>`+MODULES.map(m=>{
+      const idx=SESS.map((s,i)=>s.mods[m.n]?i:-1).filter(i=>i>=0);
+      const a=idx[0], z=idx[idx.length-1];
+      const range = a===z ? fmt(ds[a],{day:"numeric",month:"short"}) : `${fmt(ds[a],{day:"numeric",month:"short"})} – ${fmt(ds[z],{day:"numeric",month:"short"})}`;
+      const days = a===z ? "Day "+(a+1) : `Days ${a+1}–${z+1}`;
+      return `<tr><td class="c">M${m.n}</td><td class="tt">${esc(m.t)}<br><small style="color:var(--slate)">${m.h} hours</small></td><td class="dr">${range}<br><small>${days}</small></td><td class="ln"><div class="lane"><i style="left:${a/N_SESS*100}%;width:${(z-a+1)/N_SESS*100}%;animation-delay:${m.n*40}ms"></i></div></td></tr>`;
+    }).join("")+`</tbody></table>`;
+  }else{
+    html=`<ol class="days">`+SESS.map((s,i)=>{
+      const d=ds[i];
+      const mods=Object.entries(s.mods).map(([k,h])=>`<span>M${k} ${Math.round(h*10)/10}h</span>`).join("");
+      const tps=(i===0?'<li><b>Sandbox onboarding: run your first starter template</b></li>':'')+s.topics.map(t=>`<li class="${t.cont?'cont':''}">${esc(t.t)}${t.cont?' (continued)':''}</li>`).join("");
+      return `<li class="day"><div class="dn">Day ${String(i+1).padStart(2,"0")}<small>Week ${cur==="weekend"?Math.floor(i/2)+1:Math.floor(i/5)+1}</small></div><div class="dt">${fmt(d,{day:"numeric",month:"short",year:"numeric"})}<small>${fmt(d,{weekday:"long"})}, ${b.time}</small></div><div class="ag"><div class="mods">${mods}</div><ul>${tps}</ul></div></li>`;
+    }).join("")+`</ol>`;
+  }
+  html+=`<div class="plan-foot"><span>Dates are indicative. Any change for holidays will be shared with enrolled learners.</span><a class="btn small" data-form="${cur}" target="_blank" rel="noopener">Reserve seat in ${cur==="weekend"?"Batch 11":"Batch 12"}</a></div>`;
+  const body=$("#planBody"); body.innerHTML=html; body.style.animation="none"; body.offsetHeight; body.style.animation="";
+  wireForms();
+}
+$$(".batch").forEach(btn=>btn.addEventListener("click",()=>{
+  cur=btn.dataset.batch;
+  $$(".batch").forEach(x=>{const on=x===btn; x.setAttribute("aria-pressed",on); x.querySelector(".sel").textContent=on?"Selected":"Select"});
+  renderPlan();
+  $("#plan").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+}));
+$$(".tabs button").forEach(t=>t.addEventListener("click",()=>{
+  view=t.dataset.view; $$(".tabs button").forEach(x=>x.setAttribute("aria-selected",x===t)); renderPlan();
+}));
+
+/* Seats: random, fewer than 12 of 50, stable for the day */
+function seatsFor(key){
+  const d=new Date(), s=`${d.getFullYear()}${d.getMonth()}${d.getDate()}${key}`;
+  let h=0; for(const c of s) h=(h*31+c.charCodeAt(0))>>>0;
+  return 4+(h%8); // 4 to 11
+}
+["weekend","weekday"].forEach(k=>{
+  const n=seatsFor(k), cap=k[0].toUpperCase()+k.slice(1);
+  $("#seats"+cap).textContent=n;
+  $$(`.seatEcho[data-b="${k}"]`).forEach(e=>e.textContent=n);
+  onView($("#bar"+cap),()=>$("#bar"+cap).style.width=((50-n)/50*100)+"%");
+});
+
+/* Forms */
+function wireForms(){ $$("[data-form]").forEach(a=>a.href=FORM_LINKS[a.dataset.form]); }
+wireForms();
+renderPlan();
+
+/* ============================================================
+   PRICING: edit here. Discounts are percentages of the standard fee.
+   INR prices are shown + GST; USD prices carry no GST.
+   ============================================================ */
+const PRICE = { inr:39999, usd:550, gst:0.18, eb:0.10, grp:0.15 };
+const EB_END = new Date("2026-12-01T00:00:00+05:30"); /* Early Bird closes at the end of 30 Nov 2026, IST */
+const disc=(p,r)=>Math.floor(p*(1-r));
+const inr=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+const usd=n=>"$"+Math.round(n).toLocaleString("en-US");
+const P={
+  std:{i:PRICE.inr, u:PRICE.usd},
+  eb:{i:disc(PRICE.inr,PRICE.eb), u:disc(PRICE.usd,PRICE.eb)},
+  grp:{i:disc(PRICE.inr,PRICE.grp), u:disc(PRICE.usd,PRICE.grp)}
+};
+const withGst=n=>Math.round(n*(1+PRICE.gst));
+const pct=r=>Math.round(r*100)+"%";
+const ebOpen=()=>EB_END-new Date()>0;
+const daysLeft=()=>Math.max(0,Math.floor((EB_END-new Date())/864e5));
+
+function feeCard(kind, open){
+  const x=P[kind], s=P.std;
+  const head={std:"<h3>Standard fee</h3>", eb:`<span class="pill">Early Bird</span><h3>Enrol by 30 November</h3>`, grp:`<span class="pill" style="background:var(--cobalt)">Group booking</span><h3>More than 5 learners</h3>`}[kind];
+  const was = kind==="std" ? "" : `<span class="was">${inr(s.i)} + GST | ${usd(s.u)}</span>`;
+  const save = kind==="std" ? "" : `<span class="save">${pct(kind==="eb"?PRICE.eb:PRICE.grp)} off, save ${inr(s.i-x.i)} | ${usd(s.u-x.u)}</span>`;
+  const extra = kind==="std" ? "<p>Full program, either batch.</p>" : kind==="grp" ? "<p>Per learner, for groups of 6 or more booking together.</p>" : `<div class="cd2" id="feeCd"></div>`;
+  return `<div class="fee ${kind==="eb"?"feat":""} ${kind==="eb"&&!open?"closed":""}" ${kind==="eb"?'id="ebCard"':''}>${head}
+    <div class="price"><span class="cnt" data-to="${x.i}" data-cur="inr">${inr(x.i)}</span><span class="u">+ GST</span></div>
+    <span class="incl">${inr(withGst(x.i))} incl. 18% GST</span>
+    ${was}${save}
+    <div class="usd"><b class="cnt" data-to="${x.u}" data-cur="usd">${usd(x.u)}</b><span>USD for international learners, no GST</span></div>
+    ${extra}</div>`;
+}
+function animatePrices(){
+  $$(".cnt").forEach(el=>{
+    const end=+el.dataset.to, f=el.dataset.cur==="inr"?inr:usd, t0=performance.now(), dur=reduce?0:1300;
+    const tick=t=>{const p=dur?Math.min(1,(t-t0)/dur):1; el.textContent=f(end*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(tick)};
+    requestAnimationFrame(tick);
+  });
+}
+function renderFees(){
+  $("#feeGrid").innerHTML=feeCard("std",ebOpen())+feeCard("eb",ebOpen())+feeCard("grp",ebOpen());
+  onView($("#feeGrid"),animatePrices,.25);
+}
+function renderEnroll(){
+  const open=ebOpen(), cur=open?P.eb:P.std, label=open?"Early Bird":"Standard fee", dl=daysLeft();
+  const opts=[
+    {k:"weekend", n:"Batch 11", t:"Weekend Classes", when:"Sat &amp; Sun, 9:00 AM – 1:00 PM IST", est:"10:30 PM – 2:30 AM EST, Fri &amp; Sat nights"},
+    {k:"weekday", n:"Batch 12", t:"Weekday Classes", when:"Mon – Fri, 8:00 PM – 12:00 AM IST", est:"9:30 AM – 1:30 PM EST, same day"}
+  ];
+  $("#enrollBox").innerHTML=`<h3>Pick a batch to reserve your seat</h3>
+    ${open?`<p class="ebline">Early Bird ends ${dl===0?"today":`in ${dl} day${dl===1?"":"s"}`}: ${inr(P.eb.i)} + GST or ${usd(P.eb.u)}, instead of ${inr(P.std.i)} + GST or ${usd(P.std.u)}.</p>`:""}
+    ${opts.map(o=>`<div class="opt"><div><b>${o.n}: ${o.t}</b><span>${o.when}</span><br><span>${o.est}</span><br><span>${seatsFor(o.k)} of 50 seats left</span>
+      <span class="pr">${label}: ${inr(cur.i)} + GST | ${usd(cur.u)}</span></div>
+      <a class="btn" style="white-space:nowrap" data-form="${o.k}" target="_blank" rel="noopener">Reserve ${o.n}</a></div>`).join("")}
+    <p style="margin-top:14px;font-size:14.5px;color:var(--slate)">Groups of 6 or more pay ${inr(P.grp.i)} + GST or ${usd(P.grp.u)} per learner (${pct(PRICE.grp)} off).</p>`;
+  wireForms();
+}
+function tickCd(){
+  const ms=EB_END-new Date();
+  if(ms<=0){
+    $("#ribbon").innerHTML=`<span>Groups of more than 5 save <strong>${pct(PRICE.grp)}</strong>. Standard fee ${inr(P.std.i)} + GST or ${usd(P.std.u)}.</span>`;
+    const c=$("#ebCard"); if(c) c.classList.add("closed");
+    const fc=$("#feeCd"); if(fc) fc.textContent="Early Bird offer has ended";
+    $("#mPrice").textContent=`${inr(P.std.i)} + GST`; $("#mNote").textContent=`Standard fee, ${usd(P.std.u)}`;
+    renderEnroll();
+    return;
+  }
+  const d=Math.floor(ms/864e5), hh=Math.floor(ms/36e5)%24, m=Math.floor(ms/6e4)%60, s=Math.floor(ms/1e3)%60;
+  const txt=`${d}d ${String(hh).padStart(2,"0")}h ${String(m).padStart(2,"0")}m ${String(s).padStart(2,"0")}s`;
+  const rc=$("#ribbonCd"); if(rc) rc.textContent=txt+" left";
+  const fc=$("#feeCd"); if(fc) fc.textContent="Ends in "+txt;
+  $("#mPrice").textContent=`${inr(P.eb.i)} + GST`; $("#mNote").textContent=`Early Bird, ${usd(P.eb.u)}`;
+  setTimeout(tickCd,1000);
+}
+renderFees(); renderEnroll(); tickCd();
+setInterval(()=>{ if(ebOpen()) renderEnroll(); }, 3600e3); /* refresh the days-left count hourly */
+
+/* ------------------------------ BANNER, MENTORS, FEEDBACK ------------------------------ */
+const BANNER = [
+  {c:"#2340C8", k:"Stop paying for theory", t:"Why spend lakhs and <em>6–12 months</em> on theory and toy use cases? Go production-ready in <em>100 focused hours</em>."},
+  {c:"#0E9467", k:"Project-ready from Day 1", t:"Starter templates, a live sandbox and <em>real domain projects</em> from global industries. Learn the product problem, not just the code."},
+  {c:"#A86400", k:"Internship or money back", t:"The <em>top 5%</em> of every FDE 100X™ batch earn a <em>3-month internship</em>. Otherwise, money back."},
+  {c:"#7A4DDB", k:"Mentors who have shipped it", t:"Learn from mentors and advisors averaging <em>20+ years</em> across corporate, domain and AI/ML: Ex-AWS, IIM Bangalore alumnus and IIT (BHU) Faculty Chair."}
+];
+const MENTORS = [
+  {n:"Avik Bhattacharjee", i:"AB", role:"Mentor", c:["Ex-AWS","IIM Bangalore alumnus"], p:"Brings hyperscaler experience of taking generative AI from architecture to production."},
+  {n:"Amit Kumar Jaiswal", i:"AJ", role:"Advisory", url:"https://www.linkedin.com/in/amitkumarjaiswal1/", c:["Faculty Chair, IIT (BHU)","Building around AI + Quantum"], p:"Brings academic leadership and a research view of where AI and quantum computing are heading."}
+];
+/* SAMPLE FEEDBACK: replace with real, verified learner feedback */
+const SHOW_SAMPLE_NOTE = true;
+const FEEDBACK = [
+  ["Priya Raghavan","Software Engineer",5,"Finally understood how RAG really behaves in production."],
+  ["Arjun Mehta","Backend Developer",5,"Built an MCP-powered agent with real evaluation gates."],
+  ["Sneha Kulkarni","Data Engineer",4.8,"Domain projects made agentic AI feel like real work."],
+  ["Rahul Iyer","Solutions Architect",5,"Learned to fix retrieval failures, not just demo RAG."],
+  ["Vikram Nair","Cloud Engineer",4.7,"Deploying on AWS and GCP finally made sense."],
+  ["Ananya Sen","ML Engineer",4.9,"The insurance capstone felt like a real client project."],
+  ["Karthik Reddy","Full-Stack Developer",4.8,"Code from day one. Zero theory overload."],
+  ["Meera Joshi","QA Lead",5,"Evaluation and guardrail labs were incredibly practical."],
+  ["Rohan Das","DevOps Engineer",4.9,"LLMOps and AgentOps tied everything together beautifully."],
+  ["Divya Menon","Product Engineer",4.8,"Mentors explained production trade-offs from real experience."],
+  ["Siddharth Rao","Associate Architect",5,"My production portfolio opened doors in interviews."],
+  ["Neha Agarwal","Technical Lead",4.7,"Six-pillar reviews changed how I design AI systems."]
+];
+$("#pmsg").innerHTML=BANNER.map((b,i)=>`<div class="m ${i===0?'on':''}"><b style="color:${b.c}">${b.k}</b><span>${b.t.replace(/<em>/g,`<em style="color:${b.c}">`)}</span></div>`).join("");
+$("#pdots").innerHTML=BANNER.map((b,i)=>`<button type="button" aria-label="Message ${i+1}" aria-current="${i===0}"></button>`).join("");
+let bi=0, bPaused=false;
+function showB(i){ bi=i; $$("#pmsg .m").forEach((m,j)=>m.classList.toggle("on",j===i)); $$("#pdots button").forEach((d,j)=>d.setAttribute("aria-current",j===i)); }
+function nextB(){ if(!bPaused) showB((bi+1)%BANNER.length); setTimeout(nextB,5200); }
+$$("#pdots button").forEach((d,i)=>d.addEventListener("click",()=>showB(i)));
+$(".pbanner").addEventListener("mouseenter",()=>bPaused=true);
+$(".pbanner").addEventListener("mouseleave",()=>bPaused=false);
+if(!reduce) setTimeout(nextB,5200);
+
+$("#mentorGrid").innerHTML=MENTORS.map(m=>`<div class="mentor reveal"><div class="av"><span>${m.i}</span></div><p style="margin:14px 0 0;font-size:12.5px;font-weight:700;color:var(--cobalt)">${m.role.toUpperCase()}</p><h3 style="margin-top:4px">${m.url?`<a href="${m.url}" target="_blank" rel="noopener">${m.n}</a>`:m.n}</h3><div class="creds">${m.c.map(x=>`<span>${x}</span>`).join("")}</div><p>${m.p}</p></div>`).join("");
+$("#fbGrid").innerHTML=FEEDBACK.map(([n,c,r,q])=>`<div class="fb reveal"><div><span class="stars" aria-label="${r} out of 5">★★★★★<b style="--w:${r/5*100}%">★★★★★</b></span><span class="rt">${r.toFixed(1)}</span></div><q>${q}</q><div class="who">${n}<small>${c}, FDE 100X™</small></div></div>`).join("");
+$("#fbAvg").textContent=(FEEDBACK.reduce((a,f)=>a+f[2],0)/FEEDBACK.length).toFixed(1);
+$("#sampleNote").style.display=SHOW_SAMPLE_NOTE?"block":"none";
+$$(".reveal").forEach(el=>onView(el,()=>el.classList.add("in"),0));
+$$("#fbGrid .fb").forEach((el,i)=>onView(el,()=>setTimeout(()=>el.classList.add("in"), reduce?0:(i%3)*120),0));
+
+
+/* ------------------------------ WHY WITH US NOW TICKER ------------------------------ */
+const WHY_NOW = [
+  {c:"#2340C8", k:"Role transformation", t:"Industry now hires AI engineers who ship production systems, not certificate collectors.",
+   ic:'<path d="M4 17l6-6 4 4 7-7"/><path d="M15 8h6v6"/>'},
+  {c:"#0E9467", k:"Domain careers", t:"Transform your role with domain projects in banking, insurance, healthcare, retail and manufacturing.",
+   ic:'<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M12 3l9 5H3z"/>'},
+  {c:"#D98A3D", k:"No long theory wait", t:"Why wait 6–12 months on theory? Become production-ready in 100 focused hours.",
+   ic:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>'},
+  {c:"#7A4DDB", k:"No huge fees", t:"Why pay lakhs in fees? Get enterprise-grade AI engineering skills without a premium price tag.",
+   ic:'<path d="M7 5h10M7 9h10M7 5c5 0 7 2 7 4s-2 4-7 4l7 7"/>'},
+  {c:"#2340C8", k:"Ready from Day 1", t:"Start from Day 1 with templates, a sandbox and a learn-build-ship flywheel.",
+   ic:'<path d="M5 15c-1 2-1 4-1 4s2 0 4-1M9 15l-3-3c2-5 6-9 13-9 0 7-4 11-9 13z"/><circle cx="15" cy="9" r="1.5"/>'},
+  {c:"#0E9467", k:"Support after training", t:"Keep growing after training with an active community, mentors and six months' support.",
+   ic:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 1.5 6 4.5"/>'}
+];
+const wnItem=w=>`<span class="wn"><i style="background:${w.c}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${w.ic}</svg></i><span><b style="color:${w.c}">${w.k}:</b> ${w.t}</span></span>`;
+const rowA=WHY_NOW.slice(0,3).concat(WHY_NOW.slice(3)).map(wnItem).join("");
+const rowB=WHY_NOW.slice(3).concat(WHY_NOW.slice(0,3)).map(wnItem).join("");
+const dupe=s=>s+s.replace(/<span class="wn">/g,'<span class="wn" aria-hidden="true">');
+$("#wnL").innerHTML=dupe(rowA); $("#wnR").innerHTML=dupe(rowB);
+
+/* ------------------------------ SECTION ANIMATIONS ------------------------------ */
+function stagger(container, childSel, gap, cls){
+  const box=$(container); if(!box) return;
+  const kids=[...box.querySelectorAll(childSel)];
+  kids.forEach((k,i)=>{ k.classList.add("rv"); if(cls) k.classList.add(cls); k.style.setProperty("--d",(reduce?0:Math.min(i*gap,1400))+"ms"); });
+  onView(box,()=>kids.forEach(k=>k.classList.add("in")),.05);
+}
+stagger("#program",".promise blockquote, .promise h3, #stack > *",45);
+stagger("#framework","#steps li",90);
+stagger("#pillars",".pillar",120,"pop");
+stagger("#sandbox",".sbx-feats li, .ide, .tpl-item",60);
+stagger("#capstone",".track, .arch, #deliv li",40);
+stagger("#skills","#kw > div, #kw li",14);
+stagger("#roadmapList",".mod",70,"side");
+$$(".disc").forEach(d=>onView(d,()=>d.classList.add("in"),0));
+/* Module topics animate in sequence each time a module opens */
+$$("#roadmapList .mod").forEach(m=>{
+  m.querySelectorAll(".sec").forEach((s,i)=>{ s.style.setProperty("--i",i); s.querySelectorAll("li").forEach((li,j)=>li.style.setProperty("--j",Math.min(j,20))); });
+});
+
+/* =============================== SCROLL EXPERIENCE =============================== */
+const onScroll=fn=>{ let busy=false; addEventListener("scroll",()=>{ if(!busy){ busy=true; requestAnimationFrame(()=>{ fn(); busy=false; }); } },{passive:true}); };
+
+/* 1. Progress rail with section markers */
+const RAIL=[["program","Program"],["framework","Framework"],["roadmap","Curriculum"],["sandbox","Sandbox"],["capstone","Capstone"],["mentors","Mentors"],["batches","Batches"],["fees","Fees"],["insights","Insights"],["feedback","Feedback"]];
+$("#prail").insertAdjacentHTML("beforeend",RAIL.map(([id,l])=>`<button class="mk" type="button" data-id="${id}" tabindex="-1"><span>${l}</span></button>`).join(""));
+$$("#prail .mk").forEach(m=>m.addEventListener("click",()=>$("#"+m.dataset.id).scrollIntoView({behavior:reduce?"auto":"smooth"})));
+function railUpdate(){
+  const max=document.documentElement.scrollHeight-innerHeight, y=scrollY;
+  $("#prailFill").style.width=(max>0?Math.min(1,y/max)*100:0)+"%";
+  let curId=null;
+  $$("#prail .mk").forEach(m=>{
+    const el=$("#"+m.dataset.id); if(!el) return;
+    const top=el.getBoundingClientRect().top+y;
+    m.style.left=(max>0?Math.min(1,Math.max(0,(top-100)/max))*100:0)+"%";
+    const past=top-120<=y; m.classList.toggle("past",past); if(past) curId=m.dataset.id;
+  });
+  $$("#prail .mk").forEach(m=>m.classList.toggle("cur",m.dataset.id===curId));
+  $$(".nav ul a").forEach(a=>a.classList.toggle("act",a.getAttribute("href")==="#"+curId));
+}
+onScroll(railUpdate); addEventListener("resize",railUpdate); railUpdate();
+
+/* 4. Pinned project story */
+const STORY=[
+ ["Discover","Find the business problem worth solving, with KPIs the business actually tracks.","Module 1"],
+ ["Design","Architect the AI system and weigh its trade-offs against the six pillars.","Module 6"],
+ ["Build","Implement it with LLMs, SLMs, RAG, agents and MCP, from real starter templates.","Modules 2–5"],
+ ["Evaluate","Prove quality with golden datasets, LLM judges and automated release gates.","Module 7"],
+ ["Secure","Protect data, identity, tools and models against prompt injection and leakage.","Module 9"],
+ ["Deploy","Ship to cloud-native infrastructure on AWS and GCP.","Module 10"],
+ ["Observe","See latency, cost, quality and failures with traces and metrics.","Module 8"],
+ ["Operate","Run it day to day with LLMOps and AgentOps practices.","Module 8"],
+ ["Optimize","Tune cost, latency and quality until the numbers work for the business.","Modules 6 & 8"],
+ ["Transform","Deliver a measurable outcome in your chosen industry: your capstone.","Modules 11–12"]
+];
+$("#svList").innerHTML=STORY.map(([n],i)=>`<li data-i="${i}"><span class="d"></span><span>${n}</span><small>${String(i+1).padStart(2,"0")}</small></li>`).join("");
+$("#steps2").innerHTML=STORY.map(([n,t,m],i)=>`<li data-i="${i}"><span class="no">STAGE ${String(i+1).padStart(2,"0")} OF 10</span><h3>${n}</h3><p>${t}</p><span class="mods">${m}</span></li>`).join("");
+function storySet(i){
+  $$("#svList li").forEach((li,j)=>{ li.classList.toggle("done",j<i); li.classList.toggle("now",j===i); });
+  $$("#steps2 li").forEach((li,j)=>li.classList.toggle("now",j===i));
+  $("#svNo").textContent=`${String(i+1).padStart(2,"0")} / 10`;
+  $("#svBar").style.width=((i+1)/STORY.length*100)+"%";
+  $("#svState").textContent=i===STORY.length-1?"✓ In production, outcome delivered":"In progress: "+STORY[i][0];
+}
+storySet(0);
+if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) storySet(+e.target.dataset.i); }),{rootMargin:"-45% 0px -45% 0px"});
+  $$("#steps2 li").forEach(li=>io.observe(li));
+}
+
+/* 5. Curriculum: nodes switch on as the line reaches them, hours add up */
+const HRS=Object.fromEntries(MODULES.map(m=>[m.n,m.h]));
+function rmReach(){
+  const r=rm.getBoundingClientRect(), vh=innerHeight;
+  const ph=Math.max(0,Math.min(1,(vh*.6-r.top)/r.height))*(r.height-20);
+  let hrs=0;
+  $$("#roadmapList .mod").forEach(li=>{
+    const node=li.querySelector(".node"), c=node.getBoundingClientRect().top-r.top+node.offsetHeight/2;
+    const on=c<=ph+10; li.classList.toggle("reached",on);
+    if(on) hrs+=HRS[+li.id.slice(1)]||0;
+  });
+  $("#hrsDone").textContent=hrs;
+}
+onScroll(rmReach); rmReach();
+
+/* 10. Sticky price summary near Batches and Fees */
+let psumClosed=false;
+function psumRender(){
+  const b=BATCH[cur], k=cur, n=k==="weekend"?"Batch 11":"Batch 12", open=ebOpen(), pr=open?P.eb:P.std;
+  $$("#psum .sw button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.b===k));
+  $("#psumT").textContent=`${b.days}, ${b.time}`;
+  $("#psumP").innerHTML=`${inr(pr.i)} <small>+ GST</small> <small>| ${usd(pr.u)}</small>`;
+  $("#psumE").textContent=open?`Early Bird, ends ${daysLeft()===0?"today":"in "+daysLeft()+" day"+(daysLeft()===1?"":"s")}. Standard ${inr(P.std.i)} + GST.`:"Standard fee";
+  $("#psumS").textContent=`Only ${seatsFor(k)} of 50 seats left`;
+  $("#psumBtn").textContent=`Reserve ${n}`; $("#psumBtn").href=FORM_LINKS[k];
+}
+$$("#psum .sw button").forEach(x=>x.addEventListener("click",()=>{
+  cur=x.dataset.b;
+  $$(".batch").forEach(bt=>{const on=bt.dataset.batch===cur; bt.setAttribute("aria-pressed",on); bt.querySelector(".sel").textContent=on?"Selected":"Select"});
+  renderPlan(); psumRender();
+}));
+$$(".batch").forEach(bt=>bt.addEventListener("click",()=>setTimeout(psumRender,0)));
+$("#psumX").addEventListener("click",()=>{ psumClosed=true; $("#psum").classList.remove("show"); });
+function psumToggle(){
+  if(psumClosed) return;
+  const vh=innerHeight, bt=$("#batches").getBoundingClientRect().top, en=$("#enroll").getBoundingClientRect().top;
+  $("#psum").classList.toggle("show", bt<vh*.55 && en>vh*.55);
+}
+psumRender(); onScroll(psumToggle); psumToggle();
+const MASTERCLASS={
+  title:"30 minutes that show you how <em>enterprise AI really reaches production</em>.",
+  sub:"Join a free live masterclass with the FDE 100X™ mentors: why this enablement matters, how it works with a live demo, one production deep dive, and your questions answered.",
+  sessions:[
+    {at:"2026-11-14T11:00:00+05:30", slot:"morning", topic:"From POC to production: why enterprise RAG fails, and how to fix it"},
+    {at:"2026-11-14T20:00:00+05:30", slot:"night",   topic:"AI agents + MCP in a real enterprise workflow, built live"},
+    {at:"2026-11-21T11:00:00+05:30", slot:"morning", topic:"Evaluation gates that stop bad AI releases before users see them", badge:"Last before Early Bird closes"},
+    {at:"2026-11-21T20:00:00+05:30", slot:"night",   topic:"Domain AI transformation: a banking use case from problem to production", badge:"Last before Early Bird closes"}
+  ]
+};
+/* ------------------------------ FREE MASTERCLASS BANNER ------------------------------ */
+const MC_AGENDA=[
+  ["00–05 min","Why this enablement","The industry shift, the role it creates and why now."],
+  ["05–15 min","How the enablement works + live demo","Watch a real build from the course."],
+  ["15–25 min","One topic deep dive","A production problem, solved live (topic per session)."],
+  ["25–30 min","Q&amp;A","Ask mentors about the course, your career and your projects."]
+];
+const SUN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>';
+const tzf=(d,tz,o)=>d.toLocaleString("en-US",Object.assign({timeZone:tz},o));
+function mcRender(){
+  const now=new Date(); let nextIdx=-1;
+  MASTERCLASS.sessions.forEach((s,i)=>{ s.d=new Date(s.at); s.e=new Date(s.d.getTime()+30*60e3); if(nextIdx<0 && s.e>now) nextIdx=i; });
+  $("#mcTitle").innerHTML=MASTERCLASS.title;
+  $("#mcSub").textContent=MASTERCLASS.sub;
+  $("#mcAgenda").innerHTML=MC_AGENDA.map(([t,h,d])=>`<li><b>${t}</b><span>${h}<small>${d}</small></span></li>`).join("");
+  $("#mcCards").innerHTML=MASTERCLASS.sessions.map((s,i)=>{
+    const past=s.e<=now, night=s.slot==="night";
+    const day=tzf(s.d,"Asia/Kolkata",{weekday:"short",day:"numeric",month:"short"});
+    const ist=tzf(s.d,"Asia/Kolkata",{hour:"numeric",minute:"2-digit"})+" – "+tzf(s.e,"Asia/Kolkata",{hour:"numeric",minute:"2-digit"});
+    const et=tzf(s.d,"America/New_York",{weekday:"short",hour:"numeric",minute:"2-digit"});
+    return `<div class="mc-card ${i===nextIdx?"next":""} ${past?"past":""}">
+      <div class="row"><span class="tag">${night?MOON:SUN}${night?"Saturday night (India)":"Saturday morning (India)"}</span>${i===nextIdx?'<span class="nx">NEXT UP</span>':""}</div>
+      <div class="dt">${day}</div>
+      <div class="tm"><b>${ist} IST</b><br>${et} ET</div>
+      <div class="dd">Deep dive ${i+1}${s.badge?` | ${s.badge}`:""}</div>
+      <div class="dt2">${s.topic}</div>
+      <div class="sp"></div>
+      ${past?'<span class="btn" style="opacity:.8;cursor:default">Completed</span>':`<a class="btn" href="${MASTERCLASS_FORM}" target="_blank" rel="noopener">Reserve free seat</a>`}
+    </div>`;
+  }).join("");
+  mcTick(nextIdx);
+}
+let mcTimer;
+function mcTick(i){
+  clearTimeout(mcTimer);
+  const s=MASTERCLASS.sessions[i];
+  if(!s){ $("#mcNext").innerHTML="All November masterclasses are complete. New dates will be announced soon."; return; }
+  const ms=s.d-new Date();
+  if(ms<=0){ $("#mcNext").innerHTML=`<span>Masterclass ${i+1} is <b>LIVE NOW</b></span>`; mcTimer=setTimeout(mcRender,60e3); return; }
+  const d=Math.floor(ms/864e5), h=Math.floor(ms/36e5)%24, m=Math.floor(ms/6e4)%60, sec=Math.floor(ms/1e3)%60;
+  $("#mcNext").innerHTML=`<span>Next free masterclass starts in</span><b>${d}d ${String(h).padStart(2,"0")}h ${String(m).padStart(2,"0")}m ${String(sec).padStart(2,"0")}s</b><a class="btn small" href="${MASTERCLASS_FORM}" target="_blank" rel="noopener" style="background:#FFD58A;border-color:#FFD58A;color:#1A2C9C">Reserve my free seat</a>`;
+  mcTimer=setTimeout(()=>mcTick(i),1000);
+}
+mcRender();
+
+/* ------------------------------ BLOGS & WHITEPAPERS ------------------------------
+   Paste each Medium URL into "url". Cards without a URL show "Coming soon".
+   Titles and summaries below are placeholders: replace them with your published pieces. */
+const MEDIUM_PROFILE = ""; /* e.g. "https://medium.com/@your-handle" */
+const BLOGS = [
+  {kind:"Whitepaper", title:"From POC to production: closing the enterprise AI gap", sum:"Why most enterprise AI pilots stall, and the engineering that gets them shipped.", mins:12, url:""},
+  {kind:"Blog", title:"Why enterprise RAG fails in production", sum:"Stale documents, weak chunking and missing citations, and how to fix each.", mins:8, url:""},
+  {kind:"Blog", title:"The Forward Deployed Engineer: the AI role enterprises need", sum:"What an FDE does, and the skills that make one effective.", mins:6, url:""},
+  {kind:"Whitepaper", title:"AI agents and MCP in enterprise workflows", sum:"Designing agents that call real tools safely, with human approval.", mins:14, url:""},
+  {kind:"Whitepaper", title:"Evaluation gates for GenAI releases", sum:"Golden datasets, LLM judges and release thresholds that stop bad changes.", mins:11, url:""},
+  {kind:"Whitepaper", title:"A six-pillar architecture review for AI systems", sum:"Operational excellence, security, reliability, performance, cost and sustainability.", mins:10, url:""},
+  {kind:"Blog", title:"LLMOps and AgentOps: operating AI in production", sum:"Tracing, monitoring and incident response for LLM apps and agents.", mins:7, url:""},
+  {kind:"Blog", title:"AI security: from prompt injection to data leakage", sum:"The threats that matter most and the controls that address them.", mins:7, url:""},
+  {kind:"Whitepaper", title:"Domain AI transformation in banking", sum:"A fraud and AML use case, from business problem to production system.", mins:13, url:""},
+  {kind:"Blog", title:"Cost and latency engineering for LLM applications", sum:"Model routing, caching and token budgets that keep AI affordable.", mins:6, url:""}
+];
+$("#blogGrid").innerHTML=BLOGS.map(b=>{
+  const live=!!b.url, wp=b.kind==="Whitepaper";
+  const inner=`<div class="top"><span class="kind ${wp?"wp":""}">${b.kind}</span><span class="med" aria-hidden="true">M</span></div>
+    <h3>${b.title}</h3><p>${b.sum}</p>
+    <div class="meta"><span>${b.mins} min read</span><span class="go">${live?"Read on Medium →":"Coming soon"}</span></div>`;
+  return live?`<a class="blog" href="${b.url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">${inner}</a>`:`<div class="blog soon">${inner}</div>`;
+}).join("");
+$("#blogFoot").innerHTML=MEDIUM_PROFILE?`Follow us on <a href="${MEDIUM_PROFILE}" target="_blank" rel="noopener">Medium</a> for new articles.`:"New articles are published on Medium regularly.";
+stagger("#insights",".blog",60);
+
+/* ------------------------------ WELCOME POP-UP ------------------------------ */
+const POPUP_ON_EVERY_LOAD = true;  /* set to false to show it only once per browser session */
+const fmtLong=d=>d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short",year:"numeric"});
+const POPUP = [
+  {h:"Domain-led Forward Deployed Engineer transformation."},
+  {h:"First-of-its-kind enablement with real customer use cases."},
+  {h:"No heavy fees. No 12-month wait."},
+  {h:"Top 5% get a 3-month internship. Otherwise, money back."},
+  {h:`New batches: ${fmt(DATES.weekday[0],{day:"numeric",month:"short"})} (weekday) and ${fmt(DATES.weekend[0],{day:"numeric",month:"short"})} (weekend), 2027.`},
+  {h:`Early Bird until 30 Nov: ${inr(P.eb.i)} + GST | ${usd(P.eb.u)}.`},
+  {h:"Free 30-min masterclasses: 14 & 21 Nov, 11 AM and 8 PM IST."}
+];
+function popBuild(){
+  $("#popStage").innerHTML=POPUP.map((s,i)=>`<div class="sl ${i===0?"on":""}"><span class="n">${String(i+1).padStart(2,"0")} / ${String(POPUP.length).padStart(2,"0")}</span><h3 ${i===0?'id="popTitle"':''}>${s.h}</h3></div>`).join("");
+  $("#popBars").innerHTML=POPUP.map(()=>"<i><b></b></i>").join("");
+  $("#popMc").href=MASTERCLASS_FORM;
+}
+let popI=0, popT, popLast;
+function popShow(i){
+  popI=i;
+  $$("#popStage .sl").forEach((s,j)=>s.classList.toggle("on",j===i));
+  $$("#popBars i").forEach((b,j)=>{ b.classList.remove("run"); b.classList.toggle("done",j<i); });
+  const cur=$$("#popBars i")[i]; if(!cur) return;
+  void cur.offsetWidth; cur.style.setProperty("--dur","2600ms"); cur.classList.add("run");
+  clearTimeout(popT); popT=setTimeout(()=>{ if(popI<POPUP.length-1) popShow(popI+1); else cur.classList.replace("run","done"); },2600);
+}
+function popOpen(){
+  popLast=document.activeElement; popBuild();
+  const el=$("#pop"); el.classList.add("open"); el.setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden"; $("#popX").focus();
+  if(reduce){ popShow(POPUP.length-1); clearTimeout(popT); $$("#popBars i").forEach(b=>{b.classList.remove("run");b.classList.add("done")}); }
+  else popShow(0);
+}
+function popClose(){
+  const el=$("#pop"); el.classList.remove("open"); el.setAttribute("aria-hidden","true");
+  document.body.style.overflow=""; clearTimeout(popT);
+  if(popLast && popLast.focus) popLast.focus();
+}
+$("#popX").addEventListener("click",popClose);
+$("#popSkip").addEventListener("click",popClose);
+$("#popBatches").addEventListener("click",popClose);
+$("#popMc").addEventListener("click",()=>setTimeout(popClose,100));
+$("#pop").addEventListener("click",e=>{ if(e.target.id==="pop") popClose(); });
+$("#popStage").addEventListener("click",()=>popShow((popI+1)%POPUP.length));
+addEventListener("keydown",e=>{
+  if(!$("#pop").classList.contains("open")) return;
+  if(e.key==="Escape") popClose();
+  if(e.key==="Tab"){ const f=[...$("#pop").querySelectorAll("button,a[href]")]; const first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); } }
+});
+(function(){
+  let seen=false; try{ seen=sessionStorage.getItem("fde100x-pop")==="1"; }catch(e){}
+  if(POPUP_ON_EVERY_LOAD || !seen){ setTimeout(popOpen,700); try{ sessionStorage.setItem("fde100x-pop","1"); }catch(e){} }
+})();
+
+/* Floating "Home" button appears once the student has scrolled past the top of the page */
+(function(){
+  const fab=document.getElementById("homeFab"); if(!fab) return;
+  const upd=()=>fab.classList.toggle("show", scrollY>700);
+  addEventListener("scroll",upd,{passive:true}); upd();
+})();
+</script>
+</body>
+</html>
