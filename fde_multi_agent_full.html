@@ -3,15 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VN9RVJTSX8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VN9RVJTSX8');
-</script>
 <title>Multi-Agent Systems Engineering | Architecting Collaborative AI | FDEAgentic100x™</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230E1A2B%22/%3E%3Ctext x=%2232%22 y=%2226%22 text-anchor=%22middle%22 font-family=%22Arial,Helvetica,sans-serif%22 font-weight=%22700%22 font-size=%2215%22 fill=%22%237C93FF%22%3EFDE%3C/text%3E%3Ctext x=%2232%22 y=%2250%22 text-anchor=%22middle%22 font-family=%22Arial,Helvetica,sans-serif%22 font-weight=%22800%22 font-size=%2222%22 fill=%22%23ffffff%22%3EMAS%3C/text%3E%3C/svg%3E">
 <meta name="description" content="Multi-Agent Systems Engineering: a 60-hour advanced flagship program on architecting collaborative AI. Agent decomposition, supervisor and hierarchical patterns, A2A and MCP, shared memory, orchestration, multi-agent evaluation, reliability, security and enterprise platform design.">
@@ -687,6 +678,41 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwe
 .homefab svg{width:18px; height:18px}
 @media (max-width:760px){ .homefab{bottom:84px; left:14px; padding:10px} .homefab span{display:none} .crumb ol{display:none} }
 @media (prefers-reduced-motion:reduce){ .homefab{transition:none} }
+
+/* ===== Floating enrol widget (always available; no fees shown) ===== */
+.enrolw{position:fixed; right:22px; bottom:22px; z-index:46; width:350px; max-width:calc(100vw - 28px); font-family:var(--sans)}
+.ew-card{border-radius:16px; overflow:hidden; background:#fff; border:1px solid var(--rule); box-shadow:0 30px 60px -28px rgba(14,26,43,.55); transform-origin:bottom right; transition:transform .35s cubic-bezier(.16,1,.3,1), opacity .25s}
+.enrolw:not(.open) .ew-card{transform:scale(.6) translateY(30px); opacity:0; pointer-events:none; position:absolute; right:0; bottom:0; width:100%}
+.ew-head{position:relative; padding:14px 46px 14px 16px; color:#fff; background:linear-gradient(125deg,#1A2C9C 0%,#4B33B8 40%,#6B45D1 60%,#0E7F5F 100%); background-size:240% 240%; animation:ewBg 14s ease-in-out infinite}
+@keyframes ewBg{0%,100%{background-position:0% 50%} 50%{background-position:100% 50%}}
+.ew-head b{display:block; font-family:var(--serif); font-size:19px; line-height:1.2}
+.ew-head span{display:block; font-size:12.5px; color:#E3E7FF; margin-top:4px; line-height:1.4}
+.ew-min{position:absolute; top:10px; right:10px; width:30px; height:30px; border-radius:50%; border:1px solid rgba(255,255,255,.4); background:rgba(255,255,255,.12); color:#fff; font-size:18px; line-height:1; cursor:pointer}
+.ew-min:hover{background:rgba(255,255,255,.25)}
+.ew-body{max-height:min(60vh,460px); overflow:auto; padding:6px 14px 12px}
+.ew-grp{font-size:12px; font-weight:700; color:var(--slate); margin:10px 2px 6px; letter-spacing:.02em}
+.ew-item{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; align-items:center; padding:10px 12px; border:1px solid var(--rule); border-radius:12px; margin-bottom:8px; background:#fff}
+.ew-item.mc{border-color:#BFE6D6; background:#F4FBF8}
+.ew-item b{display:block; font-size:14px; line-height:1.3}
+.ew-item small{display:block; font-size:12.5px; color:var(--slate); line-height:1.4; margin-top:2px}
+.ew-item .ew-topic{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.ew-free{display:inline-block; font-size:11px; font-weight:800; color:#fff; background:var(--pass); padding:1px 7px; border-radius:99px; margin-right:4px; vertical-align:1px}
+.ew-go{display:inline-flex; align-items:center; justify-content:center; white-space:nowrap; font-size:13px; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none; background:var(--cobalt); color:#fff}
+.ew-item.mc .ew-go{background:var(--pass)}
+.ew-go:hover{filter:brightness(1.08)}
+.ew-trust{display:flex; gap:8px; align-items:flex-start; font-size:12.5px; color:var(--slate); padding:10px 14px 12px; border-top:1px solid var(--rule); background:var(--mist)}
+.ew-trust svg{flex:none; width:16px; height:16px; color:var(--cobalt); margin-top:1px}
+.ew-pill{display:inline-flex; align-items:center; gap:8px; border:0; cursor:pointer; padding:11px 16px 11px 12px; border-radius:99px; color:#fff; font:700 14px var(--sans); background:linear-gradient(125deg,#1A2C9C,#6B45D1 55%,#0E7F5F); box-shadow:0 16px 30px -14px rgba(26,44,156,.7); float:right}
+.ew-pill i{width:9px; height:9px; border-radius:50%; background:#2FD3A0; box-shadow:0 0 0 0 rgba(47,211,160,.7); animation:ewPing 1.8s infinite}
+@keyframes ewPing{70%{box-shadow:0 0 0 9px rgba(47,211,160,0)} 100%{box-shadow:0 0 0 0 rgba(47,211,160,0)}}
+.enrolw.open .ew-pill{display:none}
+.psum{display:none !important} /* replaced by the enrol widget */
+@media (max-width:760px){
+  .enrolw{right:12px; left:12px; bottom:84px; width:auto}
+  .enrolw.nobar{bottom:14px}
+  .ew-body{max-height:46vh}
+}
+@media (prefers-reduced-motion:reduce){ .ew-card,.ew-head,.ew-pill i{transition:none; animation:none} }
 /* Mobile sticky CTA */
 .mcta{display:none}
 @media (max-width:760px){
@@ -996,7 +1022,6 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwe
 @media (max-width:1000px){ .path{grid-template-columns:1fr 1fr} }
 </style>
 </head>
-
 <body>
 
 <!-- ============================================================
@@ -1561,6 +1586,18 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwe
     <p class="skip"><button type="button" id="popSkip">Continue to the page</button></p>
   </div>
 </div>
+
+
+<!-- FLOATING ENROL WIDGET: always available, minimises to a pill (filled by script) -->
+<aside class="enrolw" id="enrolW" aria-label="Enrol now">
+  <div class="ew-card" role="dialog" aria-labelledby="ewTitle">
+    <div class="ew-head"><b id="ewTitle">Enrol now</b><span id="ewSub"></span>
+      <button class="ew-min" type="button" id="ewMin" aria-label="Minimise">–</button></div>
+    <div class="ew-body" id="ewBody"></div>
+    <div class="ew-trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span>Domain-driven Level Up, coached by mentors from Ex-AWS, IIT (BHU) and leading enterprises.</span></div>
+  </div>
+  <button class="ew-pill" type="button" id="ewPill" aria-expanded="false"><i></i>Enrol now: free masterclass</button>
+</aside>
 
 <div class="mcta">
   <div><b id="mPrice">₹26,999 + GST</b><br><span id="mNote">Early Bird, $404</span></div>
@@ -2424,6 +2461,44 @@ addEventListener("keydown",e=>{
   const upd=()=>fab.classList.toggle("show", scrollY>700);
   addEventListener("scroll",upd,{passive:true}); upd();
 })();
+
+/* ============================== FLOATING ENROL WIDGET ==============================
+   Always available. Opens fully on every page load and refresh, minimises to a pill
+   when closed, and does not reopen by itself until the next load. No fees are shown here. */
+function enrolWidget(cfg){
+  const w=document.getElementById("enrolW"); if(!w) return;
+  const ist=d=>d.toLocaleString("en-US",{timeZone:"Asia/Kolkata",weekday:"short",day:"numeric",month:"short"})+", "+d.toLocaleString("en-US",{timeZone:"Asia/Kolkata",hour:"numeric",minute:"2-digit"})+" IST";
+  const day=d=>d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short",year:"numeric"});
+  const now=new Date();
+  const mcHTML=cfg.masterclasses.map(m=>{
+    const next=m.sessions.map(s=>Object.assign({},s,{d:new Date(s.at)})).sort((a,b)=>a.d-b.d).find(s=>s.d.getTime()+30*60e3>now);
+    const when=next?`30 min, live. Next: ${ist(next.d)}</small><small class="ew-topic" title="${next.topic}">Deep dive: ${next.topic}`:"New dates coming soon";
+    return `<div class="ew-item mc"><div><b><span class="ew-free">FREE</span>${m.name} masterclass</b><small>${when}</small></div><a class="ew-go" href="${m.form}" target="_blank" rel="noopener">Reserve free</a></div>`;
+  }).join("");
+  const bHTML=cfg.programs.map(p=>{
+    const first=p.batches.slice().sort((a,b)=>a.start-b.start);
+    const lines=first.map(b=>`${b.label} from ${day(b.start)}${b.seats!=null?`, ${b.seats} seats left`:""}`).join("<br>");
+    return `<div class="ew-item"><div><b>${p.name}</b><small>${lines}</small></div><a class="ew-go" href="${p.form}" target="_blank" rel="noopener">Enrol</a></div>`;
+  }).join("");
+  document.getElementById("ewSub").textContent=cfg.sub;
+  document.getElementById("ewBody").innerHTML=`<div class="ew-grp">FREE MASTERCLASS${cfg.masterclasses.length>1?"ES":""}</div>${mcHTML}<div class="ew-grp">JOIN THE PROGRAM${cfg.programs.length>1?"S":""}</div>${bHTML}`;
+  if(!document.querySelector(".mcta")) w.classList.add("nobar");
+  const pill=document.getElementById("ewPill");
+  const set=open=>{ w.classList.toggle("open",open); pill.setAttribute("aria-expanded",open); };
+  document.getElementById("ewMin").addEventListener("click",()=>set(false));
+  pill.addEventListener("click",()=>set(true));
+  addEventListener("keydown",e=>{ if(e.key==="Escape" && w.classList.contains("open") && !document.querySelector(".wpop.open")) set(false); });
+  /* Always opens fully on every page load and refresh; the student can minimise it to the pill. */
+  setTimeout(()=>set(true), 800);
+}
+
+enrolWidget({
+  sub: "Free masterclasses and full programs: reserve in one click.",
+  masterclasses: [{name:"Multi-Agent Systems", form:MASTERCLASS_FORM, sessions:MASTERCLASS.sessions}],
+  programs: [{name:"Multi-Agent Systems Engineering", form:FORM_LINKS.b14, batches:[
+    {label:"Batch 14 (weekdays)", start:DATES.b14[0], sched:"Mon–Fri, 8 PM–12 AM IST", seats:seatsFor("b14")},
+    {label:"Batch 13 (weekend)", start:DATES.b13[0], sched:"Sat & Sun, 9 AM–1 PM IST", seats:seatsFor("b13")}]}]
+});
 </script>
 </body>
 </html>
