@@ -439,6 +439,10 @@ footer{padding:56px 0 40px; font-size:14.5px; color:var(--slate)}
 @keyframes ewPing{70%{box-shadow:0 0 0 9px rgba(47,211,160,0)} 100%{box-shadow:0 0 0 0 rgba(47,211,160,0)}}
 .enrolw.open .ew-pill{display:none}
 .psum{display:none !important} /* replaced by the enrol widget */
+/* Wide layout when there are four options (homepage): masterclasses | programs, no inner scrolling */
+.enrolw.wide{width:660px}
+.enrolw.wide .ew-body{display:grid; grid-template-columns:1fr 1fr; gap:0 12px; max-height:none; overflow:visible}
+@media (max-width:760px){ .enrolw.wide{width:auto} .enrolw.wide .ew-body{grid-template-columns:1fr; max-height:46vh; overflow:auto} }
 @media (max-width:760px){
   .enrolw{right:12px; left:12px; bottom:84px; width:auto}
   .enrolw.nobar{bottom:14px}
@@ -1430,13 +1434,13 @@ function enrolWidget(cfg){
     return `<div class="ew-item"><div><b>${p.name}</b><small>${lines}</small></div><a class="ew-go" href="${p.form}" target="_blank" rel="noopener">Enrol</a></div>`;
   }).join("");
   document.getElementById("ewSub").textContent=cfg.sub;
-  document.getElementById("ewBody").innerHTML=`<div class="ew-grp">FREE MASTERCLASS${cfg.masterclasses.length>1?"ES":""}</div>${mcHTML}<div class="ew-grp">JOIN THE PROGRAM${cfg.programs.length>1?"S":""}</div>${bHTML}`;
+  document.getElementById("ewBody").innerHTML=`<div class="ew-col"><div class="ew-grp">FREE MASTERCLASS${cfg.masterclasses.length>1?"ES":""}</div>${mcHTML}</div><div class="ew-col"><div class="ew-grp">JOIN THE PROGRAM${cfg.programs.length>1?"S":""}</div>${bHTML}</div>`;
+  if(cfg.masterclasses.length+cfg.programs.length>2) w.classList.add("wide");
   if(!document.querySelector(".mcta")) w.classList.add("nobar");
   const pill=document.getElementById("ewPill");
   const set=open=>{ w.classList.toggle("open",open); pill.setAttribute("aria-expanded",open); };
   document.getElementById("ewMin").addEventListener("click",()=>set(false));
   pill.addEventListener("click",()=>set(true));
-  addEventListener("keydown",e=>{ if(e.key==="Escape" && w.classList.contains("open") && !document.querySelector(".wpop.open")) set(false); });
   /* Always opens fully on every page load and refresh; the student can minimise it to the pill. */
   setTimeout(()=>set(true), 800);
 }
